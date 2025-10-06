@@ -1,8 +1,16 @@
-# Book Review: "Thinking, Fast and Slow"
+---
+title: "Thinking, Fast and Slow"
+date: "2024-10-06"
+description: "A deep dive into Daniel Kahneman's exploration of the dual-system model of human thinking and cognitive biases that shape our decision-making."
+tags: ["psychology", "decision-making", "cognitive-biases", "behavioral-economics"]
+type: "reading"
+author: "Daniel Kahneman"
+published: "2011"
+rating: 5
+status: "read"
+---
 
-**Author**: Daniel Kahneman  
-**Published**: 2011  
-**My Rating**: ⭐⭐⭐⭐⭐
+# Book Review: "Thinking, Fast and Slow"
 
 ## Overview
 

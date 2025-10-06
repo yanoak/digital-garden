@@ -1,6 +1,14 @@
-# The Power of Digital Gardens
+---
+title: "The Power of Digital Gardens"
+date: "2024-10-06"
+description: "Exploring the paradigm shift from traditional blogs to digital gardens - interconnected, evolving, and imperfect spaces for learning in public."
+tags: ["digital-gardens", "writing", "learning", "knowledge-management"]
+type: "essay"
+featured: true
+readingTime: 5
+---
 
-*October 2024*
+# The Power of Digital Gardens
 
 ## Introduction
 

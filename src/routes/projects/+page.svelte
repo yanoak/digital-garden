@@ -1,52 +1,35 @@
-<h1>Projects</h1>
+<script lang="ts">
+	import { Container, Section, Title, Paragraph, ContentList } from '$lib/components';
+	import type { Project } from '$lib/types';
 
-<p>Write-ups about projects I've built and things I'm currently working on.</p>
+	// Sample data - in a real app, this would come from a CMS or file system
+	const projects: Project[] = [
+		{
+			title: "Digital Garden",
+			date: "2024-10-06",
+			description: "A personal digital garden built with SvelteKit, designed to share essays, book reviews, notes, and project write-ups in an interconnected, evolving format.",
+			tags: ["sveltekit", "markdown", "web-development", "digital-garden"],
+			slug: "sample-project",
+			type: "project",
+			status: "in-progress",
+			technologies: ["SvelteKit", "TypeScript", "Tailwind CSS", "MDsvelte"],
+			githubUrl: "https://github.com/yourusername/digital-garden"
+		}
+	];
+</script>
 
-<div class="project-list">
-	<article class="project-card">
-		<h2><a href="/projects/sample-project">Sample Project: Digital Garden</a></h2>
-		<p class="tags">🏷️ SvelteKit • Markdown • Web Development</p>
-		<p class="date">October 2024</p>
-		<p>Building a personal digital garden to share ideas and projects...</p>
-	</article>
-</div>
+<Section padding="xl" background="white">
+	<Container>
+		<div class="text-center mb-12">
+			<Title class="mb-6">Projects</Title>
+			<Paragraph size="lg" class="max-w-3xl mx-auto">
+				Write-ups about projects I've built and things I'm currently working on.
+			</Paragraph>
+		</div>
 
-<style>
-	.project-list {
-		margin-top: 2rem;
-	}
-
-	.project-card {
-		background: white;
-		padding: 1.5rem;
-		margin-bottom: 1.5rem;
-		border-radius: 8px;
-		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-		transition: box-shadow 0.2s;
-	}
-
-	.project-card:hover {
-		box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-	}
-
-	.project-card h2 {
-		margin-top: 0;
-		margin-bottom: 0.5rem;
-	}
-
-	.project-card h2 a {
-		text-decoration: none;
-	}
-
-	.tags {
-		color: #666;
-		font-size: 0.9rem;
-		margin-bottom: 0.25rem;
-	}
-
-	.date {
-		color: #888;
-		font-size: 0.9rem;
-		margin-bottom: 0.5rem;
-	}
-</style>
+		<ContentList 
+			content={projects} 
+			title="Active Projects"
+		/>
+	</Container>
+</Section>

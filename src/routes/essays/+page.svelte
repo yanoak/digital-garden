@@ -1,45 +1,35 @@
-<h1>Essays</h1>
+<script lang="ts">
+	import { Container, Section, Title, Paragraph, ContentList } from '$lib/components';
+	import type { Essay } from '$lib/types';
 
-<p>Welcome to my essays. Here I share longer-form thoughts and explorations on topics that interest me.</p>
+	// Sample data - in a real app, this would come from a CMS or file system
+	const essays: Essay[] = [
+		{
+			title: "The Power of Digital Gardens",
+			date: "2024-10-06",
+			description: "Exploring the paradigm shift from traditional blogs to digital gardens - interconnected, evolving, and imperfect spaces for learning in public.",
+			tags: ["digital-gardens", "writing", "learning", "knowledge-management"],
+			slug: "sample-essay",
+			type: "essay",
+			featured: true,
+			readingTime: 5
+		}
+	];
+</script>
 
-<div class="essay-list">
-	<article class="essay-card">
-		<h2><a href="/essays/sample-essay">Sample Essay: The Power of Digital Gardens</a></h2>
-		<p class="date">October 2024</p>
-		<p>An exploration of how digital gardens represent a new way of thinking about online content...</p>
-	</article>
-</div>
+<Section padding="xl" background="white">
+	<Container>
+		<div class="text-center mb-12">
+			<Title class="mb-6">Essays</Title>
+			<Paragraph size="lg" class="max-w-3xl mx-auto">
+				Welcome to my essays. Here I share longer-form thoughts and explorations on topics that interest me.
+			</Paragraph>
+		</div>
 
-<style>
-	.essay-list {
-		margin-top: 2rem;
-	}
-
-	.essay-card {
-		background: white;
-		padding: 1.5rem;
-		margin-bottom: 1.5rem;
-		border-radius: 8px;
-		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-		transition: box-shadow 0.2s;
-	}
-
-	.essay-card:hover {
-		box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-	}
-
-	.essay-card h2 {
-		margin-top: 0;
-		margin-bottom: 0.5rem;
-	}
-
-	.essay-card h2 a {
-		text-decoration: none;
-	}
-
-	.date {
-		color: #888;
-		font-size: 0.9rem;
-		margin-bottom: 0.5rem;
-	}
-</style>
+		<ContentList 
+			content={essays} 
+			title="Featured Essays"
+			showFeatured={true}
+		/>
+	</Container>
+</Section>

@@ -1,6 +1,13 @@
-# On Learning in Public
+---
+title: "On Learning in Public"
+date: "2024-10-06"
+description: "Exploring the concept of learning in public - sharing your learning journey openly, including mistakes, questions, and half-formed ideas."
+tags: ["learning", "public-sharing", "personal-growth", "knowledge-sharing"]
+type: "note"
+category: "learning"
+---
 
-*October 2024*
+# On Learning in Public
 
 ## The Concept
 

@@ -1,45 +1,33 @@
-<h1>Notes</h1>
+<script lang="ts">
+	import { Container, Section, Title, Paragraph, ContentList } from '$lib/components';
+	import type { Note } from '$lib/types';
 
-<p>Quick thoughts, learnings, and observations on various topics. These are evergreen notes that evolve over time.</p>
+	// Sample data - in a real app, this would come from a CMS or file system
+	const notes: Note[] = [
+		{
+			title: "On Learning in Public",
+			date: "2024-10-06",
+			description: "Exploring the concept of learning in public - sharing your learning journey openly, including mistakes, questions, and half-formed ideas.",
+			tags: ["learning", "public-sharing", "personal-growth", "knowledge-sharing"],
+			slug: "sample-note",
+			type: "note",
+			category: "learning"
+		}
+	];
+</script>
 
-<div class="note-list">
-	<article class="note-card">
-		<h2><a href="/notes/sample-note">Sample Note: On Learning in Public</a></h2>
-		<p class="date">October 2024</p>
-		<p>Why sharing your learning journey can accelerate growth...</p>
-	</article>
-</div>
+<Section padding="xl" background="white">
+	<Container>
+		<div class="text-center mb-12">
+			<Title class="mb-6">Notes</Title>
+			<Paragraph size="lg" class="max-w-3xl mx-auto">
+				Quick thoughts, learnings, and observations on various topics. These are evergreen notes that evolve over time.
+			</Paragraph>
+		</div>
 
-<style>
-	.note-list {
-		margin-top: 2rem;
-	}
-
-	.note-card {
-		background: white;
-		padding: 1.5rem;
-		margin-bottom: 1.5rem;
-		border-radius: 8px;
-		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-		transition: box-shadow 0.2s;
-	}
-
-	.note-card:hover {
-		box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-	}
-
-	.note-card h2 {
-		margin-top: 0;
-		margin-bottom: 0.5rem;
-	}
-
-	.note-card h2 a {
-		text-decoration: none;
-	}
-
-	.date {
-		color: #888;
-		font-size: 0.9rem;
-		margin-bottom: 0.5rem;
-	}
-</style>
+		<ContentList 
+			content={notes} 
+			title="Recent Notes"
+		/>
+	</Container>
+</Section>
