@@ -29,7 +29,7 @@
 	<ContentHeader {metadata} />
 
 	<!-- Article Content -->
-	<article class="bg-white max-w-content mx-auto px-2xl py-20">
+	<article class="bg-white max-w-content mx-auto px-2xl pt-20 pb-30">
 		<div class="prose prose-lg max-w-none">
 			{@render children?.()}
 		</div>

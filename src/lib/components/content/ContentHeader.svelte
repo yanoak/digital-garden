@@ -10,32 +10,32 @@
 </script>
 
 <!-- Content Header with gradient background -->
-<section class="bg-gradient-to-b from-white to-background py-20 px-2xl">
+<section class="bg-gradient-to-b from-white to-background pt-20 pb-15 px-2xl">
 	<div class="max-w-content mx-auto">
 		<!-- Metadata -->
 		{#if metadata.type || metadata.date || metadata.readingTime}
 			<div class="text-content-meta text-accent uppercase tracking-wider mb-8">
 				{#if metadata.type}
-					{metadata.type}
+					{metadata.type.toUpperCase()}
 				{/if}
 				{#if metadata.type && (metadata.date || metadata.readingTime)}
 					<span class="mx-2">·</span>
 				{/if}
 				{#if metadata.date}
-					{metadata.date}
+					{new Date(metadata.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).toUpperCase()}
 				{/if}
 				{#if metadata.date && metadata.readingTime}
 					<span class="mx-2">·</span>
 				{/if}
 				{#if metadata.readingTime}
-					{metadata.readingTime} min read
+					{metadata.readingTime} MIN READ
 				{/if}
 			</div>
 		{/if}
 
 		<!-- Title -->
 		{#if metadata.title}
-			<h1 class="text-content-title font-heading font-normal text-text mb-6">
+			<h1 class="text-content-title font-heading text-text mb-6">
 				{metadata.title}
 			</h1>
 		{/if}

@@ -670,7 +670,7 @@ background: linear-gradient(to bottom, #FFFFFF 0%, #F4F4F9 100%);
 - Format: `Type · Date · Reading Time`
 
 **Title**:
-- Font: Archivo Narrow, 52px, weight 400
+- Font: Archivo Narrow, 52px, weight 600
 - Line Height: 1.3
 - Color: `#0A0A0A`
 - Margin Bottom: 25px
@@ -822,6 +822,22 @@ background: linear-gradient(to bottom, #FFFFFF 0%, #F4F4F9 100%);
 - Font: Archivo Narrow, 13px, weight 400
 - Color: `#586F7C`
 - Letter Spacing: 1px
+
+---
+
+## Layout Structure Clarifications
+
+### Section Landing Pages vs Individual Content Pages
+
+**Section Landing Pages** (`/essays`, `/notes`, `/reading`, `/projects`):
+- Use `Section`, `Container`, `Title`, and `ContentList` components
+- NO metadata header
+- Clean list-based layout for content discovery
+
+**Individual Content Pages** (`/essays/sample-essay`, `/notes/sample-note`, etc.):
+- Use `ContentLayout` component with `ContentHeader` and `ContentFooter`
+- Include metadata header with type, date, reading time
+- Full content layout optimized for reading
 
 ---
 

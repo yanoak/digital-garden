@@ -32,7 +32,7 @@ module.exports = {
         'label': ['14px', { lineHeight: '1.4', letterSpacing: '2px' }],
         'small': ['13px', { lineHeight: '1.5', letterSpacing: '1px' }],
         // Content page typography
-        'content-title': ['52px', { lineHeight: '1.3' }],
+        'content-title': ['52px', { lineHeight: '1.3', fontWeight: '600' }],
         'content-subtitle': ['20px', { lineHeight: '1.6' }],
         'content-body': ['19px', { lineHeight: '1.9' }],
         'content-h2': ['32px', { lineHeight: '1.3' }],
@@ -45,7 +45,7 @@ module.exports = {
         'content-related-meta': ['13px', { lineHeight: '1.5', letterSpacing: '1px' }],
       },
       fontWeight: {
-        'heading': '400',
+        'heading': '600',
         'heading-bold': '600',
         'heading-black': '700',
         'body': '400',
@@ -65,6 +65,9 @@ module.exports = {
         '5xl': '6.25rem',  // 100px
         '100': '25rem',    // 400px for hero section
         '12.5': '3.125rem', // 50px for button padding
+        '15': '3.75rem',   // 60px for content header bottom
+        '20': '5rem',      // 80px for content header top
+        '30': '7.5rem',    // 120px for article content bottom
       },
       transitionTimingFunction: {
         'zen': 'cubic-bezier(0.4, 0, 0.2, 1)',
@@ -88,6 +91,7 @@ module.exports = {
             fontFamily: 'David Libre, serif',
             fontSize: '1.1875rem', // 19px
             lineHeight: '1.9',
+            fontWeight: '400',
             // Content page specific spacing
             p: {
               marginBottom: '1.875rem', // 30px

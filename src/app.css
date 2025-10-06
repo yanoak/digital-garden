@@ -48,7 +48,7 @@
 
   /* Content Page Typography */
   .content-title {
-    @apply text-content-title font-heading font-normal text-text leading-tight;
+    @apply text-content-title font-heading font-semibold text-text leading-tight;
   }
 
   .content-subtitle {
