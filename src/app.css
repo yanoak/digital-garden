@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&family=David+Libre:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-body text-text bg-background leading-relaxed;
+    font-family: 'David Libre', serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+    font-family: 'Archivo Narrow', sans-serif;
+  }
+  
+  a {
+    @apply text-accent hover:text-text-hover transition-colors duration-300;
+  }
+  
+  code {
+    @apply bg-background px-1 py-0.5 text-sm font-mono;
+  }
+  
+  pre {
+    @apply bg-background p-4 overflow-x-auto border-zen border-border;
+  }
+  
+  pre code {
+    @apply bg-transparent p-0;
+  }
+  
+  blockquote {
+    @apply border-l border-zen border-primary pl-4 italic text-text-muted;
+  }
+}
+
+@layer components {
+  /* Zen Design System Components */
+  .zen-gradient {
+    background: linear-gradient(to bottom, white 0%, #F4F4F9 100%);
+  }
+  
+  .zen-border {
+    border: 1px solid #B8DBD9;
+  }
+  
+  .zen-border-hover {
+    border: 1px solid #04724D;
+  }
+  
+  .zen-transition {
+    @apply transition-all duration-300;
+  }
+  
+  /* Typography Utilities */
+  .text-zen-title {
+    @apply text-title font-heading text-text;
+  }
+  
+  .text-zen-heading {
+    @apply text-heading font-heading-bold text-text;
+  }
+  
+  .text-zen-body {
+    @apply text-body font-body text-text;
+  }
+  
+  .text-zen-label {
+    @apply text-label font-label text-text-muted;
+  }
+  
+  /* Layout Utilities */
+  .zen-container {
+    @apply w-full mx-auto px-6 max-w-7xl;
+  }
+  
+  .zen-section {
+    @apply w-full py-16;
+  }
+  
+  .zen-card {
+    @apply bg-white border-zen border-border p-10 transition-all duration-300 hover:border-border-hover;
+  }
+  
+  .zen-button {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-transparent border-zen border-border text-text font-heading transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary focus:outline-none;
+  }
+  
+  .zen-link {
+    @apply text-accent hover:text-text-hover transition-all duration-300;
+  }
+  
+  .zen-sidebar-item {
+    @apply block py-3.5 px-6 border-b border-zen border-background text-text-muted transition-all duration-300 hover:text-text-hover hover:pl-9;
+  }
+  
+  /* Navigation */
+  .zen-nav {
+    @apply flex items-center space-x-10;
+  }
+  
+  .zen-nav-item {
+    @apply text-base font-heading text-text-muted hover:text-text-hover transition-all duration-300;
+  }
+  
+  /* Content Cards */
+  .zen-content-card {
+    @apply bg-white border-zen border-border p-10 transition-all duration-300 hover:border-border-hover;
+  }
+  
+  .zen-content-card-title {
+    @apply text-heading font-heading-bold text-text mb-4;
+  }
+  
+  .zen-content-card-description {
+    @apply text-body font-body text-text-muted;
+  }
+}
