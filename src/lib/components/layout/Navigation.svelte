@@ -1,7 +1,10 @@
 <script lang="ts">
   import type { NavItem } from '$lib/types';
   import CustomLink from '$lib/components/ui/CustomLink.svelte';
+  import CustomImage from '$lib/components/ui/CustomImage.svelte';
   import Container from '$lib/components/layout/Container.svelte';
+  import doorIcon from '$lib/assets/door_icon.png';
+  import doorIconOpen from '$lib/assets/door_icon_open_black.png';
 
   interface NavigationProps {
     class?: string;
@@ -17,11 +20,26 @@
   ];
 </script>
 
-<header class="bg-white border-b border-zen border-border py-8 {className}">
+<header class="bg-white border-b border-t-0 border-l-0 border-r-0 border-zen border-border py-4 {className}">
   <Container>
     <nav class="flex items-center justify-between">
-      <CustomLink href="/" class="text-2xl font-heading text-text">
-        🌱 Digital Garden
+      <CustomLink href="/" class="flex items-center group">
+        <div class="relative h-12 w-12">
+          <CustomImage 
+            src={doorIcon} 
+            alt="Digital Garden" 
+            width={24} 
+            height={24}
+            class="h-12 w-12 object-contain transition-opacity duration-300 group-hover:opacity-0"
+          />
+          <CustomImage 
+            src={doorIconOpen} 
+            alt="Digital Garden" 
+            width={24} 
+            height={24}
+            class="absolute top-0 left-0 h-12 w-12 object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          />
+        </div>
       </CustomLink>
       
       <div class="hidden md:flex items-center space-x-10">
