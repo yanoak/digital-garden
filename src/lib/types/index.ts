@@ -166,6 +166,23 @@ export interface SidebarItemProps {
   onClick?: () => void;
 }
 
+export interface SidebarFilterProps {
+  title: string;
+  items: Array<{ label: string; value: string; count?: number; active?: boolean }>;
+  onItemClick: (value: string) => void;
+}
+
+export interface CollectionCardProps {
+  content: Content;
+  isLast?: boolean;
+}
+
+export interface FilterGroup {
+  key: string;
+  label: string;
+  options: Array<{ label: string; value: string; count?: number; active?: boolean }>;
+}
+
 // Legacy Component Props (for backward compatibility)
 export interface CustomImageProps {
   src: string;

@@ -886,6 +886,257 @@ background: linear-gradient(to bottom, #FFFFFF 0%, #F4F4F9 100%);
 
 ---
 
+## Collection Landing Pages (Essays, Notes, Reading, Projects)
+
+### Page Structure
+Collection landing pages display lists of content with filtering and sorting capabilities.
+
+**Layout Pattern**:
+```
+Header (sticky)
+└─ Logo + Navigation
+
+Page Header (gradient)
+├─ Collection Title
+└─ Collection Description
+
+Content Area (single-column)
+├─ Filter Bar (horizontal)
+└─ Content List (stacked cards)
+
+Site Footer
+```
+
+---
+
+### Page Header (Collection)
+
+**Background**:
+```css
+background: linear-gradient(to bottom, #FFFFFF 0%, #F4F4F9 100%);
+```
+
+**Structure**:
+- Padding: 80px 50px
+- Max Width: 1400px (centered)
+- No border at bottom
+
+**Collection Title**:
+- Font: Archivo Narrow, 56px, weight 400
+- Line Height: 1.3
+- Color: `#0A0A0A`
+- Margin Bottom: 20px
+
+**Collection Description**:
+- Font: David Libre, 20px, weight 400
+- Color: `#586F7C`
+- Line Height: 1.7
+- Max Width: 700px
+
+---
+
+### Single-Column Layout
+
+**Container**:
+- Max Width: 1400px (centered)
+- Padding: 80px 50px
+- Background: `#F4F4F9`
+
+---
+
+### Filter Bar (Horizontal)
+
+**Structure**:
+- Background: White (`#FFFFFF`)
+- Border: 1px solid `#B8DBD9`
+- Padding: 30px 40px
+- Margin Bottom: 40px
+- Display: Flex
+- Flex Wrap: Wrap
+- Gap: 30px
+- Align Items: Center
+
+**Filter Group**:
+- Display: Flex
+- Align Items: Center
+- Gap: 15px
+
+**Filter Label**:
+- Font: Archivo Narrow, 14px, weight 600
+- Letter Spacing: 2px
+- Text Transform: Uppercase
+- Color: `#0A0A0A`
+- White Space: Nowrap
+
+**Filter Options**:
+- Display: Flex
+- Gap: 10px
+- Flex Wrap: Wrap
+
+**Filter Button**:
+- Background: Transparent
+- Border: 1px solid `#B8DBD9`
+- Padding: 8px 16px
+- Font: David Libre, 14px, weight 400
+- Color: `#586F7C`
+- Cursor: Pointer
+- Transition: all 300ms ease
+- Border Radius: 0
+
+**Filter Button Hover**:
+- Border Color: `#04724D`
+- Color: `#04724D`
+
+**Filter Button Active**:
+- Background: `#04724D`
+- Color: `#FFFFFF`
+- Border: 1px solid `#04724D`
+
+**Filter Count** (optional):
+- Font: Archivo Narrow, 12px, weight 400
+- Color: `#B8DBD9`
+- Margin Left: 6px
+
+---
+
+### Content List
+
+**Content Meta** (e.g., "24 essays"):
+- Font: Archivo Narrow, 14px, weight 400
+- Color: `#586F7C`
+- Letter Spacing: 1px
+- Margin Bottom: 40px
+
+**Card List**:
+- Display: Flex
+- Flex Direction: Column
+- Gap: 0 (cards share borders)
+
+---
+
+### Content Card (List Item)
+
+**Structure**:
+- Background: White (`#FFFFFF`)
+- Border: 1px solid `#B8DBD9`
+- Border Bottom: None (except last card)
+- Padding: 40px
+- Cursor: Pointer
+- Transition: border-color 300ms ease
+
+**Border Behavior**:
+- First card: No special border-radius
+- Last card: Has bottom border (`1px solid #B8DBD9`)
+- All cards: Border-radius 0
+
+**Hover State**:
+- Border Color: `#04724D`
+- Z-Index: 1
+- Position: Relative (allows border to show on all sides)
+
+**Card Meta** (date, reading time):
+- Font: Archivo Narrow, 13px, weight 400
+- Color: `#586F7C`
+- Letter Spacing: 1px
+- Margin Bottom: 15px
+- Format: `Date · Reading Time`
+
+**Card Title**:
+- Font: Archivo Narrow, 26px, weight 600
+- Line Height: 1.3
+- Color: `#0A0A0A`
+- Margin Bottom: 15px
+- Transition: color 300ms ease
+- Hover: Color → `#04724D`
+
+**Card Description**:
+- Font: David Libre, 17px, weight 400
+- Line Height: 1.7
+- Color: `#586F7C`
+- Margin Bottom: 20px
+
+**Card Tags**:
+- Display: Flex
+- Gap: 10px
+- Flex Wrap: Wrap
+- Individual tag: See Tag component spec
+
+---
+
+### Empty State (No Results)
+
+**Container**:
+- Text Align: Center
+- Padding: 80px 40px
+- Color: `#586F7C`
+
+**Icon** (optional):
+- Font Size: 48px
+- Margin Bottom: 20px
+- Opacity: 0.5
+
+**Text**:
+- Font: David Libre, 18px, weight 400
+
+---
+
+### Collection-Specific Variations
+
+**Essays**:
+- Show: Date, reading time, tags
+- Filter by: Topics, tags
+- Sort by: Newest, oldest, alphabetical
+
+**Notes**:
+- Show: Date, type (seedling/evergreen)
+- Filter by: Topic, status (seedling/evergreen)
+- Sort by: Recently updated, newest, alphabetical
+
+**Reading**:
+- Show: Date, author, type (book/article)
+- Filter by: Status (reading/finished), type, year
+- Sort by: Recently added, date finished, author
+
+**Projects**:
+- Show: Date, status, tech stack
+- Filter by: Status (active/complete), technology
+- Sort by: Newest, alphabetical, status
+
+---
+
+### Responsive Behavior (Collection Pages)
+
+**Mobile (< 768px)**:
+- Filter bar padding: 20px 25px
+- Filter groups stack vertically
+- Filter gap: 20px
+- Page header padding: 60px 30px
+- Page title: 40px (down from 56px)
+- Content area padding: 60px 30px
+- Card padding: 30px
+- Card title: 22px (down from 26px)
+
+---
+
+### Interaction Patterns
+
+**Card Click**:
+- Entire card is clickable
+- Navigates to full content page
+- Use semantic `<article>` or `<a>` wrapper
+
+**Filter Selection**:
+- Updates URL parameters for shareable filtered views
+- Smooth content transition (no page reload)
+- Active filter clearly indicated
+
+**Sort Change**:
+- Reorders list with smooth animation
+- Maintains scroll position or scrolls to top
+- Active sort clearly indicated
+
+---
+
 ## Examples
 
 ### Hero Section Implementation
