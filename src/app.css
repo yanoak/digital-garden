@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&family=David+Libre:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,47 +10,25 @@
   }
   
   body {
-    @apply font-sans text-secondary-700 bg-secondary-50 leading-relaxed;
+    @apply font-body text-text bg-background leading-relaxed;
+    font-family: 'David Libre', serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
-  }
-  
-  h1 {
-    @apply text-4xl text-primary-600;
-  }
-  
-  h2 {
-    @apply text-3xl text-primary-500;
-  }
-  
-  h3 {
-    @apply text-2xl text-primary-600;
-  }
-  
-  h4 {
-    @apply text-xl text-secondary-800;
-  }
-  
-  h5 {
-    @apply text-lg text-secondary-800;
-  }
-  
-  h6 {
-    @apply text-base text-secondary-800;
+    @apply font-heading tracking-tight;
+    font-family: 'Archivo Narrow', sans-serif;
   }
   
   a {
-    @apply text-primary-600 hover:text-primary-700 transition-colors duration-200;
+    @apply text-accent hover:text-text-hover transition-colors duration-300;
   }
   
   code {
-    @apply bg-secondary-100 px-1 py-0.5 rounded text-sm font-mono;
+    @apply bg-background px-1 py-0.5 text-sm font-mono;
   }
   
   pre {
-    @apply bg-secondary-100 p-4 rounded-lg overflow-x-auto;
+    @apply bg-background p-4 overflow-x-auto border-zen border-border;
   }
   
   pre code {
@@ -56,52 +36,89 @@
   }
   
   blockquote {
-    @apply border-l-4 border-primary-500 pl-4 italic text-secondary-600;
+    @apply border-l border-zen border-primary pl-4 italic text-text-muted;
   }
 }
 
 @layer components {
-  .btn {
-    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  /* Zen Design System Components */
+  .zen-gradient {
+    background: linear-gradient(to bottom, white 0%, #F4F4F9 100%);
   }
   
-  .btn-primary {
-    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  .zen-border {
+    border: 1px solid #B8DBD9;
   }
   
-  .btn-secondary {
-    @apply btn bg-secondary-200 text-secondary-800 hover:bg-secondary-300 focus:ring-secondary-500;
+  .zen-border-hover {
+    border: 1px solid #04724D;
   }
   
-  .btn-outline {
-    @apply btn border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white focus:ring-primary-500;
+  .zen-transition {
+    @apply transition-all duration-300;
   }
   
-  .card {
-    @apply bg-white rounded-lg shadow-sm border border-secondary-200 overflow-hidden;
+  /* Typography Utilities */
+  .text-zen-title {
+    @apply text-title font-heading text-text;
   }
   
-  .card-header {
-    @apply px-6 py-4 border-b border-secondary-200;
+  .text-zen-heading {
+    @apply text-heading font-heading-bold text-text;
   }
   
-  .card-body {
-    @apply px-6 py-4;
+  .text-zen-body {
+    @apply text-body font-body text-text;
   }
   
-  .card-footer {
-    @apply px-6 py-4 border-t border-secondary-200 bg-secondary-50;
+  .text-zen-label {
+    @apply text-label font-label text-text-muted;
   }
   
-  .input {
-    @apply block w-full px-3 py-2 border border-secondary-300 rounded-md shadow-sm placeholder-secondary-400 focus:outline-none focus:ring-primary-500 focus:border-primary-500;
+  /* Layout Utilities */
+  .zen-container {
+    @apply w-full mx-auto px-6 max-w-7xl;
   }
   
-  .textarea {
-    @apply input resize-none;
+  .zen-section {
+    @apply w-full py-16;
   }
   
-  .select {
-    @apply input pr-10;
+  .zen-card {
+    @apply bg-white border-zen border-border p-10 transition-all duration-300 hover:border-border-hover;
+  }
+  
+  .zen-button {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-transparent border-zen border-border text-text font-heading transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary focus:outline-none;
+  }
+  
+  .zen-link {
+    @apply text-accent hover:text-text-hover transition-all duration-300;
+  }
+  
+  .zen-sidebar-item {
+    @apply block py-3.5 px-6 border-b border-zen border-background text-text-muted transition-all duration-300 hover:text-text-hover hover:pl-9;
+  }
+  
+  /* Navigation */
+  .zen-nav {
+    @apply flex items-center space-x-10;
+  }
+  
+  .zen-nav-item {
+    @apply text-base font-heading text-text-muted hover:text-text-hover transition-all duration-300;
+  }
+  
+  /* Content Cards */
+  .zen-content-card {
+    @apply bg-white border-zen border-border p-10 transition-all duration-300 hover:border-border-hover;
+  }
+  
+  .zen-content-card-title {
+    @apply text-heading font-heading-bold text-text mb-4;
+  }
+  
+  .zen-content-card-description {
+    @apply text-body font-body text-text-muted;
   }
 }

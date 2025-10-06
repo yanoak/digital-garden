@@ -16,8 +16,8 @@
   const getCodeClasses = (): string => {
     const baseClasses = 'font-mono';
     const blockClasses = block 
-      ? 'block bg-secondary-100 p-4 rounded-lg overflow-x-auto' 
-      : 'inline bg-secondary-100 px-1 py-0.5 rounded text-sm';
+      ? 'block bg-background p-4 overflow-x-auto border-zen border-border' 
+      : 'inline bg-background px-1 py-0.5 text-sm';
     
     return `${baseClasses} ${blockClasses} ${className}`;
   };

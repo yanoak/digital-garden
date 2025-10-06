@@ -33,12 +33,12 @@
 
 <div class="space-y-8 {className}">
   {#if title || description}
-    <div class="text-center">
+    <div class="text-left">
       {#if title}
         <Heading level={2} class="mb-4">{title}</Heading>
       {/if}
       {#if description}
-        <Paragraph class="text-lg" muted>{description}</Paragraph>
+        <Paragraph class="text-body" color="text-muted">{description}</Paragraph>
       {/if}
     </div>
   {/if}
@@ -59,7 +59,7 @@
       {#if showFeatured && featuredContent.length > 0}
         <Heading level={3} class="mb-6">All Content</Heading>
       {/if}
-      <Grid cols={3} gap="lg">
+      <Grid cols="auto-fit" gap="2xl">
         {#each regularContent as item}
           <ContentCard content={item} />
         {/each}
@@ -67,9 +67,9 @@
     </Container>
   {:else}
     <Container>
-      <div class="text-center py-12">
+      <div class="text-left py-12">
         <Heading level={3} class="mb-4">No content found</Heading>
-        <Paragraph muted>Check back later for new content.</Paragraph>
+        <Paragraph color="text-muted">Check back later for new content.</Paragraph>
       </div>
     </Container>
   {/if}

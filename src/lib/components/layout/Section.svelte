@@ -1,32 +1,28 @@
 <script lang="ts">
   import type { SectionProps } from '$lib/types';
 
-  interface SectionPropsExtended extends SectionProps {
-    padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
-    background?: 'white' | 'gray' | 'primary' | 'transparent';
-  }
-
   let { 
-    padding = 'md',
-    background = 'white',
+    padding = 'lg',
+    background = 'background',
     class: className = '', 
     children 
-  }: SectionPropsExtended = $props();
+  }: SectionProps = $props();
 
   const getSectionClasses = (): string => {
     const baseClasses = 'w-full';
     const paddingClasses = {
       none: '',
-      sm: 'py-4',
-      md: 'py-8',
-      lg: 'py-12',
-      xl: 'py-16'
+      sm: 'py-8',
+      md: 'py-12',
+      lg: 'py-20',
+      xl: 'py-24',
+      hero: 'py-100'
     };
     const backgroundClasses = {
       white: 'bg-white',
-      gray: 'bg-secondary-50',
-      primary: 'bg-primary-50',
-      transparent: 'bg-transparent'
+      background: 'bg-background',
+      transparent: 'bg-transparent',
+      gradient: 'zen-gradient'
     };
     
     return `${baseClasses} ${paddingClasses[padding]} ${backgroundClasses[background]} ${className}`;

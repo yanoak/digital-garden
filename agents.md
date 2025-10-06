@@ -54,6 +54,13 @@ This is a SvelteKit-based digital garden containing:
 - **Maintain consistent component APIs** across similar components
 - **Document component props and usage** in component files
 
+### Component Composition Rules
+- **NEVER nest Link components** inside Button, Card, or other interactive components
+- **Use Button component with href prop** for navigation buttons instead of nested Button+Link
+- **Link component is ONLY for inline text links** within paragraphs, descriptions, or other text content
+- **Use appropriate component variants** (Button, Card, etc.) with href prop for interactive navigation elements
+- **Follow semantic HTML principles** - `<a>` tags for links, `<button>` tags for actions
+
 ### Markdown Content Guidelines
 - **Use MDsvelte for all markdown content** (essays, book reviews, notes, projects)
 - **Leverage MDsvelte's component integration** to maintain consistent styling
@@ -108,6 +115,24 @@ This is a SvelteKit-based digital garden containing:
 
 ## Documentation Standards
 *To be defined based on project requirements*
+
+## Design System
+
+**All visual design, styling, and UI components MUST follow the specifications in `design-system.md`.**
+
+Before implementing any visual elements:
+1. Read and reference `design-system.md`
+2. Use defined color tokens, typography scales, and spacing values
+3. Follow component specifications exactly
+4. Never deviate from the design system without explicit approval
+
+### Quick Reference
+- Colors: See "Color Palette" section in `design-system.md`
+- Typography: See "Typography" section in `design-system.md`
+- Components: See "Components" section in `design-system.md`
+- Spacing: Use defined spacing scale only
+
+**No custom colors, fonts, or spacing values outside the design system.**
 
 ---
 *This file should be updated as project requirements evolve.*

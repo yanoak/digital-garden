@@ -1,28 +1,35 @@
 <script lang="ts">
-  import type { TypographyProps } from '$lib/types';
+  import type { HeadingProps } from '$lib/types';
 
-  interface HeadingProps extends TypographyProps {
+  interface HeadingComponentProps extends HeadingProps {
     level?: 1 | 2 | 3 | 4 | 5 | 6;
   }
 
   let { 
     level = 2,
     class: className = '', 
-    children 
-  }: HeadingProps = $props();
+    children,
+    size = 'default',
+    color = 'text',
+    weight = 'heading-bold'
+  }: HeadingComponentProps = $props();
 
   const getHeadingClasses = (): string => {
-    const baseClasses = 'font-semibold tracking-tight';
-    const levelClasses = {
-      1: 'text-4xl text-primary-600',
-      2: 'text-3xl text-primary-500',
-      3: 'text-2xl text-primary-600',
-      4: 'text-xl text-secondary-800',
-      5: 'text-lg text-secondary-800',
-      6: 'text-base text-secondary-800'
+    const baseClasses = 'font-heading text-text text-heading font-heading-bold';
+    const colorClasses = {
+      primary: 'text-primary',
+      secondary: 'text-secondary',
+      accent: 'text-accent',
+      text: 'text-text',
+      'text-muted': 'text-text-muted',
+      'text-hover': 'text-text-hover',
+      background: 'text-background',
+      white: 'text-white',
+      border: 'text-border',
+      'border-hover': 'text-border-hover'
     };
     
-    return `${baseClasses} ${levelClasses[level]} ${className}`;
+    return `${baseClasses} ${colorClasses[color]} ${className}`;
   };
 </script>
 

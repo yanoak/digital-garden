@@ -1,16 +1,16 @@
 <script lang="ts">
-  import type { ParagraphProps } from '$lib/types';
+  import type { LabelProps } from '$lib/types';
 
   let { 
     size = 'default',
     class: className = '', 
     children,
-    color = 'text',
-    weight = 'body'
-  }: ParagraphProps = $props();
+    color = 'text-muted',
+    weight = 'label'
+  }: LabelProps = $props();
 
-  const getParagraphClasses = (): string => {
-    const baseClasses = 'font-body text-text text-body';
+  const getLabelClasses = (): string => {
+    const baseClasses = 'font-heading text-text-muted text-label font-label uppercase';
     const colorClasses = {
       primary: 'text-primary',
       secondary: 'text-secondary',
@@ -28,6 +28,6 @@
   };
 </script>
 
-<p class={getParagraphClasses()}>
+<span class={getLabelClasses()}>
   {@render children?.()}
-</p>
+</span>

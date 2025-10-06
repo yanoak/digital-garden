@@ -1,30 +1,26 @@
 <script lang="ts">
   import type { ContainerProps } from '$lib/types';
 
-  interface ContainerPropsExtended extends ContainerProps {
-    size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
-    center?: boolean;
-  }
-
   let { 
-    size = 'lg',
-    center = true,
+    maxWidth = 'xl',
     class: className = '', 
     children 
-  }: ContainerPropsExtended = $props();
+  }: ContainerProps = $props();
 
   const getContainerClasses = (): string => {
-    const baseClasses = 'w-full';
-    const sizeClasses = {
+    const baseClasses = 'w-full mx-auto px-12';
+    const maxWidthClasses = {
       sm: 'max-w-2xl',
       md: 'max-w-4xl',
       lg: 'max-w-6xl',
-      xl: 'max-w-7xl',
-      full: 'max-w-full'
+      xl: 'max-w-container',
+      '2xl': 'max-w-8xl',
+      full: 'max-w-full',
+      container: 'max-w-container',
+      content: 'max-w-content'
     };
-    const centerClasses = center ? 'mx-auto' : '';
     
-    return `${baseClasses} ${sizeClasses[size]} ${centerClasses} ${className}`;
+    return `${baseClasses} ${maxWidthClasses[maxWidth]} ${className}`;
   };
 </script>
 

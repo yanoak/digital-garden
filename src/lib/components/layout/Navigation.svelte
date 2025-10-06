@@ -17,18 +17,18 @@
   ];
 </script>
 
-<header class="bg-white border-b border-secondary-200 shadow-sm {className}">
+<header class="bg-white border-b border-zen border-border py-8 {className}">
   <Container>
-    <nav class="flex items-center justify-between py-4">
-      <CustomLink href="/" class="text-2xl font-bold text-primary-600 hover:text-primary-700">
+    <nav class="flex items-center justify-between">
+      <CustomLink href="/" class="text-2xl font-heading text-text">
         🌱 Digital Garden
       </CustomLink>
       
-      <div class="hidden md:flex items-center space-x-8">
+      <div class="hidden md:flex items-center space-x-10">
         {#each navItems as item}
           <CustomLink 
             href={item.href} 
-            class="text-secondary-700 hover:text-primary-600 transition-colors duration-200 font-medium"
+            class="text-base font-heading text-accent hover:text-text-hover transition-colors duration-300"
           >
             {item.label}
           </CustomLink>
@@ -37,7 +37,7 @@
       
       <!-- Mobile menu button -->
       <button 
-        class="md:hidden p-2 text-secondary-700 hover:text-primary-600 transition-colors duration-200"
+        class="md:hidden p-2 text-accent hover:text-text-hover transition-colors duration-300"
         aria-label="Toggle mobile menu"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
