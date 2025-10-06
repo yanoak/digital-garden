@@ -621,6 +621,255 @@ module.exports = {
 
 ---
 
+## Content Page Layout (Essays, Notes, Projects)
+
+### Page Structure
+Content pages (essays, notes, project documentation) use a focused, single-column layout optimized for reading.
+
+**Layout Pattern**:
+```
+Header (sticky)
+└─ Logo + Navigation
+
+Content Header (gradient)
+├─ Metadata
+├─ Title
+├─ Subtitle
+└─ Tags
+
+Article Content (white background)
+└─ Body text + Headings + Media
+
+Content Footer
+├─ Back link
+└─ Related content
+
+Site Footer
+```
+
+---
+
+### Content Header
+
+**Background**:
+```css
+background: linear-gradient(to bottom, #FFFFFF 0%, #F4F4F9 100%);
+```
+
+**Structure**:
+- Padding: 80px 50px 60px
+- Max Width: 700px (centered)
+- No border at bottom (seamless transition to content)
+
+**Metadata**:
+- Font: Archivo Narrow, 14px, weight 400
+- Color: `#586F7C`
+- Text Transform: Uppercase
+- Letter Spacing: 2px
+- Margin Bottom: 30px
+- Format: `Type · Date · Reading Time`
+
+**Title**:
+- Font: Archivo Narrow, 52px, weight 400
+- Line Height: 1.3
+- Color: `#0A0A0A`
+- Margin Bottom: 25px
+
+**Subtitle/Description**:
+- Font: David Libre, 20px, weight 400
+- Color: `#586F7C`
+- Line Height: 1.6
+- Margin Bottom: 30px
+- Max Width: 100% of container
+
+**Tags**:
+- Display: Flex, gap 10px
+- Individual tag: See Tag component spec
+
+---
+
+### Article Content
+
+**Container**:
+- Background: White (`#FFFFFF`)
+- Max Width: 700px (centered)
+- Padding: 80px 50px 120px
+- No borders or shadows
+
+**Body Text**:
+- Font: David Libre, 19px, weight 400
+- Line Height: 1.9 (optimal for extended reading)
+- Color: `#0A0A0A`
+- Paragraph spacing: 30px bottom margin
+
+**Reading-Optimized Spacing**:
+- Between paragraphs: 30px
+- Before H2: 60px
+- After H2: 25px
+- Before H3: 45px
+- After H3: 20px
+- Around blockquotes: 40px
+- Around code blocks: 35px
+- Around horizontal rules: 50px
+
+---
+
+### Content Typography
+
+**Heading 2 (Major Sections)**:
+- Font: Archivo Narrow, 32px, weight 600
+- Line Height: 1.3
+- Color: `#0A0A0A`
+- Margin: 60px top, 25px bottom
+
+**Heading 3 (Subsections)**:
+- Font: Archivo Narrow, 24px, weight 600
+- Line Height: 1.4
+- Color: `#0A0A0A`
+- Margin: 45px top, 20px bottom
+
+**Blockquote**:
+- Border Left: 3px solid `#04724D`
+- Padding Left: 30px
+- Font Style: Italic
+- Font Size: 20px
+- Color: `#586F7C`
+- Margin: 40px vertical
+
+**Lists (ul, ol)**:
+- Padding Left: 30px
+- Margin Bottom: 30px
+- List Item Spacing: 12px bottom margin
+
+**Links**:
+- Color: `#04724D`
+- Text Decoration: None
+- Border Bottom: 1px solid `#B8DBD9`
+- Transition: border-color 300ms ease
+- Hover: Border Bottom Color → `#04724D`
+
+**Inline Code**:
+- Font: Monospace (Courier New)
+- Background: `#F4F4F9`
+- Padding: 2px 6px
+- Font Size: 17px
+- Color: `#04724D`
+
+**Code Block (pre)**:
+- Background: `#F4F4F9`
+- Border: 1px solid `#B8DBD9`
+- Padding: 25px
+- Margin: 35px vertical
+- Font Size: 15px
+- Line Height: 1.6
+- Overflow: Auto (horizontal scroll)
+
+**Horizontal Rule**:
+- Border: None
+- Border Top: 1px solid `#B8DBD9`
+- Margin: 50px vertical
+
+**Section Divider** (optional ornamental):
+- Text: `• • •`
+- Text Align: Center
+- Color: `#B8DBD9`
+- Font Size: 24px
+- Letter Spacing: 20px
+- Margin: 60px vertical
+
+---
+
+### Content Footer
+
+**Structure**:
+- Background: White (`#FFFFFF`)
+- Border Top: 1px solid `#B8DBD9`
+- Padding: 60px 50px
+- Max Width: 700px (centered)
+
+**Back Link**:
+- Font: Archivo Narrow, 16px, weight 600
+- Color: `#586F7C`
+- Display: Inline-flex with arrow icon
+- Gap: 10px
+- Hover: Color → `#04724D`
+- Margin Bottom: 40px
+
+**Related Content Section**:
+- Margin Top: 40px
+
+**Related Title**:
+- Font: Archivo Narrow, 18px, weight 600
+- Letter Spacing: 2px
+- Text Transform: Uppercase
+- Color: `#0A0A0A`
+- Margin Bottom: 25px
+
+**Related Item**:
+- Padding: 20px vertical
+- Border Bottom: 1px solid `#F4F4F9`
+- Transition: padding-left 300ms ease
+- Hover: Padding Left → 15px
+
+**Related Item Link**:
+- Font: David Libre, 18px, weight 500
+- Color: `#0A0A0A`
+- Display: Block
+- Margin Bottom: 8px
+- Hover: Color → `#04724D`
+
+**Related Item Meta**:
+- Font: Archivo Narrow, 13px, weight 400
+- Color: `#586F7C`
+- Letter Spacing: 1px
+
+---
+
+### Responsive Behavior (Content Pages)
+
+**Mobile (< 768px)**:
+- Header padding: 25px 30px
+- Content header padding: 60px 30px 40px
+- Title: 36px (down from 52px)
+- Subtitle: 18px (down from 20px)
+- Article padding: 60px 30px 80px
+- Body text: 18px (down from 19px)
+- H2: 28px (down from 32px)
+- H3: 22px (down from 24px)
+- Blockquote padding left: 20px, font size: 19px
+- Content footer padding: 50px 30px
+
+---
+
+### Maximum Readability Guidelines
+
+**Line Length**:
+- Optimal: 65-75 characters per line
+- Implementation: 700px max-width container
+- Never exceed 800px for body text
+
+**Line Height**:
+- Body text: 1.9 (generous for extended reading)
+- Headings: 1.3-1.4 (tighter for visual impact)
+
+**Contrast**:
+- Body text on white: `#0A0A0A` (21:1 ratio)
+- Avoid colored text for paragraphs
+
+**Distractions**:
+- No sidebars during reading
+- No floating elements
+- No pop-ups or interruptions
+- Minimal navigation (sticky header only)
+
+**Flow**:
+- Consistent vertical rhythm
+- Clear visual hierarchy
+- Generous whitespace
+- Smooth transitions between sections
+
+---
+
 ## Examples
 
 ### Hero Section Implementation
@@ -660,5 +909,5 @@ module.exports = {
 
 ---
 
-*Last Updated: [Current Date]*
+*Last Updated: 6 Oct 2025*
 *Version: 1.0.0*

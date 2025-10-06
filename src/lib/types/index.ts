@@ -38,6 +38,27 @@ export interface Project extends BaseContent {
 
 export type Content = Essay | Reading | Note | Project;
 
+// Content Metadata for rendering
+export interface ContentMetadata {
+  title: string;
+  date?: string;
+  description?: string;
+  tags?: string[];
+  type?: string;
+  readingTime?: number;
+  featured?: boolean;
+  category?: string;
+  status?: string;
+  author?: string;
+  rating?: number;
+  technologies?: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  featuredImage?: string;
+  bookCover?: string;
+  relatedContent?: string[];
+}
+
 // Design System Types
 export type ZenColor = 'primary' | 'secondary' | 'accent' | 'text' | 'text-muted' | 'text-hover' | 'background' | 'white' | 'border' | 'border-hover';
 export type ZenSize = 'sm' | 'md' | 'lg' | 'xl';

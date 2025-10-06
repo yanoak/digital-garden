@@ -31,6 +31,18 @@ module.exports = {
         'body': ['17px', { lineHeight: '1.8' }],
         'label': ['14px', { lineHeight: '1.4', letterSpacing: '2px' }],
         'small': ['13px', { lineHeight: '1.5', letterSpacing: '1px' }],
+        // Content page typography
+        'content-title': ['52px', { lineHeight: '1.3' }],
+        'content-subtitle': ['20px', { lineHeight: '1.6' }],
+        'content-body': ['19px', { lineHeight: '1.9' }],
+        'content-h2': ['32px', { lineHeight: '1.3' }],
+        'content-h3': ['24px', { lineHeight: '1.4' }],
+        'content-blockquote': ['20px', { lineHeight: '1.6' }],
+        'content-code': ['17px', { lineHeight: '1.6' }],
+        'content-code-block': ['15px', { lineHeight: '1.6' }],
+        'content-meta': ['14px', { lineHeight: '1.4', letterSpacing: '2px' }],
+        'content-related': ['18px', { lineHeight: '1.4' }],
+        'content-related-meta': ['13px', { lineHeight: '1.5', letterSpacing: '1px' }],
       },
       fontWeight: {
         'heading': '400',
@@ -74,57 +86,85 @@ module.exports = {
             maxWidth: 'none',
             color: '#0A0A0A',
             fontFamily: 'David Libre, serif',
-            fontSize: '1.125rem',
-            lineHeight: '1.8',
-            h1: {
-              color: '#0A0A0A',
-              fontFamily: 'Archivo Narrow, sans-serif',
-              fontWeight: '600',
-              fontSize: '3.5rem',
-              lineHeight: '1.1',
-              letterSpacing: '-0.02em',
+            fontSize: '1.1875rem', // 19px
+            lineHeight: '1.9',
+            // Content page specific spacing
+            p: {
+              marginBottom: '1.875rem', // 30px
             },
             h2: {
               color: '#0A0A0A',
               fontFamily: 'Archivo Narrow, sans-serif',
               fontWeight: '600',
-              fontSize: '2rem',
-              lineHeight: '1.2',
-              letterSpacing: '-0.01em',
+              fontSize: '2rem', // 32px
+              lineHeight: '1.3',
+              marginTop: '3.75rem', // 60px
+              marginBottom: '1.5625rem', // 25px
             },
             h3: {
               color: '#0A0A0A',
               fontFamily: 'Archivo Narrow, sans-serif',
               fontWeight: '600',
-              fontSize: '1.5rem',
-              lineHeight: '1.3',
+              fontSize: '1.5rem', // 24px
+              lineHeight: '1.4',
+              marginTop: '2.8125rem', // 45px
+              marginBottom: '1.25rem', // 20px
             },
             a: {
-              color: '#586F7C',
+              color: '#04724D',
               textDecoration: 'none',
-              transition: 'color 300ms ease',
+              borderBottom: '1px solid #B8DBD9',
+              transition: 'border-color 300ms ease',
               '&:hover': {
-                color: '#04724D',
+                borderBottomColor: '#04724D',
               },
             },
             code: {
               backgroundColor: '#F4F4F9',
-              padding: '0.125rem 0.25rem',
+              padding: '0.125rem 0.375rem', // 2px 6px
               fontFamily: 'Courier New, monospace',
-              fontSize: '0.875rem',
+              fontSize: '1.0625rem', // 17px
+              color: '#04724D',
             },
             pre: {
               backgroundColor: '#F4F4F9',
-              padding: '1rem',
+              padding: '1.5625rem', // 25px
+              margin: '2.1875rem 0', // 35px vertical
               overflowX: 'auto',
               border: '1px solid #B8DBD9',
+              fontSize: '0.9375rem', // 15px
+              lineHeight: '1.6',
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              padding: '0',
+              color: '#0A0A0A',
             },
             blockquote: {
               borderLeftColor: '#04724D',
-              borderLeftWidth: '1px',
-              paddingLeft: '1rem',
+              borderLeftWidth: '3px',
+              paddingLeft: '1.875rem', // 30px
               fontStyle: 'italic',
               color: '#586F7C',
+              fontSize: '1.25rem', // 20px
+              lineHeight: '1.6',
+              margin: '2.5rem 0', // 40px vertical
+            },
+            ul: {
+              paddingLeft: '1.875rem', // 30px
+              marginBottom: '1.875rem', // 30px
+            },
+            ol: {
+              paddingLeft: '1.875rem', // 30px
+              marginBottom: '1.875rem', // 30px
+            },
+            li: {
+              marginBottom: '0.75rem', // 12px
+            },
+            hr: {
+              border: 'none',
+              borderTop: '1px solid #B8DBD9',
+              margin: '3.125rem 0', // 50px vertical
             },
           },
         },

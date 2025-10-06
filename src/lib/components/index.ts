@@ -33,3 +33,6 @@ export { default as Footer } from './layout/Footer.svelte';
 // Content Components
 export { default as ContentCard } from './content/ContentCard.svelte';
 export { default as ContentList } from './content/ContentList.svelte';
+export { default as ContentHeader } from './content/ContentHeader.svelte';
+export { default as ContentFooter } from './content/ContentFooter.svelte';
+export { default as ContentLayout } from './content/ContentLayout.svelte';
