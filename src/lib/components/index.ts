@@ -31,6 +31,10 @@ export { default as SidebarFilter } from './layout/SidebarFilter.svelte';
 export { default as FilterBar } from './layout/FilterBar.svelte';
 export { default as Navigation } from './layout/Navigation.svelte';
 export { default as Footer } from './layout/Footer.svelte';
+export { default as EssayLayout } from './layout/EssayLayout.svelte';
+export { default as NoteLayout } from './layout/NoteLayout.svelte';
+export { default as ProjectLayout } from './layout/ProjectLayout.svelte';
+export { default as ReadingLayout } from './layout/ReadingLayout.svelte';
 
 // Content Components
 export { default as ContentCard } from './content/ContentCard.svelte';

@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { NoteLayout } from '$lib/components';
+	import { EssayLayout } from '$lib/components';
 
 	// This layout is specifically for individual content pages
 	let { children }: { children: any } = $props();
 
 	// Get the current slug from the route
-	const slug = 'sample-note';
+	const slug = 'tinkering-worldbuilding-resisting-reconnecting';
 </script>
 
-<NoteLayout {slug}>
+<EssayLayout {slug}>
 	{@render children?.()}
-</NoteLayout>
+</EssayLayout>
