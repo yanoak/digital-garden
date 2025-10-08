@@ -7,46 +7,10 @@
 		CollectionCardList 
 	} from '$lib/components';
 	import type { Reading, FilterGroup } from '$lib/types';
+	import readingData from '$lib/data/reading.json';
 
-	// Sample data - in a real app, this would come from a CMS or file system
-	const reading: Reading[] = [
-		{
-			title: "Thinking, Fast and Slow",
-			date: "2024-10-06",
-			description: "A deep dive into Daniel Kahneman's exploration of the dual-system model of human thinking and cognitive biases that shape our decision-making.",
-			tags: ["psychology", "decision-making", "cognitive-biases", "behavioral-economics"],
-			slug: "sample-review",
-			type: "reading",
-			author: "Daniel Kahneman",
-			published: "2011",
-			rating: 5,
-			status: "read"
-		},
-		{
-			title: "Atomic Habits",
-			date: "2024-10-05",
-			description: "James Clear's comprehensive guide to building good habits and breaking bad ones through small, incremental changes that compound over time.",
-			tags: ["habits", "productivity", "self-improvement", "psychology"],
-			slug: "atomic-habits",
-			type: "reading",
-			author: "James Clear",
-			published: "2018",
-			rating: 4,
-			status: "read"
-		},
-		{
-			title: "The Lean Startup",
-			date: "2024-10-04",
-			description: "Eric Ries's methodology for developing businesses and products through validated learning, rapid experimentation, and iterative design.",
-			tags: ["entrepreneurship", "startups", "business", "innovation"],
-			slug: "lean-startup",
-			type: "reading",
-			author: "Eric Ries",
-			published: "2011",
-			rating: 4,
-			status: "reading"
-		}
-	];
+	// Load reading data from JSON file
+	const reading: Reading[] = readingData as Reading[];
 
 	// Filter and sort state
 	let selectedStatus = 'all';

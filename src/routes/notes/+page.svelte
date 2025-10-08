@@ -7,37 +7,10 @@
 		CollectionCardList 
 	} from '$lib/components';
 	import type { Note, FilterGroup } from '$lib/types';
+	import notesData from '$lib/data/notes.json';
 
-	// Sample data - in a real app, this would come from a CMS or file system
-	const notes: Note[] = [
-		{
-			title: "On Learning in Public",
-			date: "2024-10-06",
-			description: "Exploring the concept of learning in public - sharing your learning journey openly, including mistakes, questions, and half-formed ideas.",
-			tags: ["learning", "public-sharing", "personal-growth", "knowledge-sharing"],
-			slug: "sample-note",
-			type: "note",
-			category: "learning"
-		},
-		{
-			title: "The Art of Mindful Coding",
-			date: "2024-10-05",
-			description: "Reflections on bringing mindfulness practices into software development - staying present, reducing cognitive load, and finding flow states.",
-			tags: ["mindfulness", "programming", "productivity"],
-			slug: "mindful-coding",
-			type: "note",
-			category: "programming"
-		},
-		{
-			title: "Building Sustainable Habits",
-			date: "2024-10-04",
-			description: "Notes on creating habits that stick - the importance of systems over goals, environmental design, and gradual improvement.",
-			tags: ["habits", "productivity", "self-improvement"],
-			slug: "sustainable-habits",
-			type: "note",
-			category: "productivity"
-		}
-	];
+	// Load notes data from JSON file
+	const notes: Note[] = notesData as Note[];
 
 	// Filter and sort state
 	let selectedTopic = 'all';

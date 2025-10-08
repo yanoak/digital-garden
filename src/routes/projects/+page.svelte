@@ -7,44 +7,10 @@
 		CollectionCardList 
 	} from '$lib/components';
 	import type { Project, FilterGroup } from '$lib/types';
+	import projectsData from '$lib/data/projects.json';
 
-	// Sample data - in a real app, this would come from a CMS or file system
-	const projects: Project[] = [
-		{
-			title: "Digital Garden",
-			date: "2024-10-06",
-			description: "A personal digital garden built with SvelteKit, designed to share essays, book reviews, notes, and project write-ups in an interconnected, evolving format.",
-			tags: ["sveltekit", "markdown", "web-development", "digital-garden"],
-			slug: "sample-project",
-			type: "project",
-			status: "in-progress",
-			technologies: ["SvelteKit", "TypeScript", "Tailwind CSS", "MDsvelte"],
-			githubUrl: "https://github.com/yourusername/digital-garden"
-		},
-		{
-			title: "Task Management App",
-			date: "2024-10-05",
-			description: "A minimalist task management application built with React and Node.js, featuring real-time collaboration and smart categorization.",
-			tags: ["react", "nodejs", "productivity", "collaboration"],
-			slug: "task-management-app",
-			type: "project",
-			status: "completed",
-			technologies: ["React", "Node.js", "PostgreSQL", "Socket.io"],
-			githubUrl: "https://github.com/yourusername/task-app",
-			liveUrl: "https://taskapp.example.com"
-		},
-		{
-			title: "AI Writing Assistant",
-			date: "2024-10-04",
-			description: "An AI-powered writing assistant that helps improve clarity, tone, and structure of written content using natural language processing.",
-			tags: ["ai", "nlp", "writing", "machine-learning"],
-			slug: "ai-writing-assistant",
-			type: "project",
-			status: "planning",
-			technologies: ["Python", "OpenAI API", "FastAPI", "React"],
-			githubUrl: "https://github.com/yourusername/ai-writer"
-		}
-	];
+	// Load projects data from JSON file
+	const projects: Project[] = projectsData as Project[];
 
 	// Filter and sort state
 	let selectedStatus = 'all';
