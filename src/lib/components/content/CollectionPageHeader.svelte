@@ -5,7 +5,7 @@
 	export let description: string;
 </script>
 
-<Section class="collection-page-header">
+<Section class="collection-page-header" background="gradient">
 	<Container maxWidth="container" class="collection-page-header-container">
 		<Title size="lg" class="collection-title">{title}</Title>
 		<Paragraph size="lg" class="collection-description">
@@ -16,7 +16,7 @@
 
 <style>
 	.collection-page-header {
-		@apply bg-gradient-to-b from-white to-background py-20 px-2xl;
+		@apply px-2xl;
 	}
 
 	.collection-page-header-container {

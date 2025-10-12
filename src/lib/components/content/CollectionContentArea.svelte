@@ -4,7 +4,7 @@
 	export let children: any;
 </script>
 
-<Section class="collection-content-area">
+<Section class="collection-content-area" >
 	<Container maxWidth="container" class="collection-content-area-container">
 		{@render children?.()}
 	</Container>
@@ -12,7 +12,7 @@
 
 <style>
 	.collection-content-area {
-		@apply bg-background py-20 px-2xl;
+		@apply px-2xl;
 	}
 
 	.collection-content-area-container {

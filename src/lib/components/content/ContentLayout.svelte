@@ -26,7 +26,7 @@
 
 </script>
 
-<div class="content-layout">
+<div class="content-layout" >
 	<!-- Content Header -->
 	<ContentHeader {metadata} />
 
@@ -49,7 +49,7 @@
 
 <style>
 	.content-layout {
-		@apply min-h-screen bg-background;
+		@apply min-h-screen;
 	}
 
 	.content-article-section {
