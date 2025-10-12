@@ -56,8 +56,16 @@
 
 	// Get href based on content type
 	function getHref(): string {
+		if (content.type === 'project' && 'liveUrl' in content && content.liveUrl) {
+			return content.liveUrl;
+		}
 		const basePath = content.type === 'reading' ? '/reading' : `/${content.type}s`;
 		return `${basePath}/${content.slug}`;
+	}
+
+	// Get target attribute for links
+	function getTarget(): string {
+		return content.type === 'project' ? '_blank' : '_self';
 	}
 
 	// Get image source for content type
@@ -84,47 +92,91 @@
 </script>
 
 <article class="collection-card" class:last-card={isLast}>
-	<a href={getHref()} class="card-link">
-		<div class="card-content">
-			{#if getImageSrc()}
-				<div class="card-image">
-					<CustomImage 
-						src={getImageSrc()!} 
-						alt={getImageAlt()}
-						width={120}
-						height={160}
-						class="image"
-					/>
+	<a href={getHref()} target={getTarget()} class="card-link">
+		<div class="card-content" class:project-layout={content.type === 'project'}>
+			{#if content.type === 'project'}
+				<!-- Project layout: text first, then image below -->
+				<div class="card-text">
+					<div class="card-meta">
+						{getContentMeta()}
+					</div>
+					
+					<Heading size="lg" class="card-title">
+						{content.title}
+					</Heading>
+					
+					{#if getAdditionalInfo()}
+						<div class="card-additional">
+							{getAdditionalInfo()}
+						</div>
+					{/if}
+					
+					<Paragraph class="card-description">
+						{content.description}
+					</Paragraph>
+					
+					{#if content.tags && content.tags.length > 0}
+						<div class="card-tags">
+							{#each content.tags.slice(0, 4) as tag}
+								<Tag variant="outline" size="sm">{tag}</Tag>
+							{/each}
+						</div>
+					{/if}
+				</div>
+				
+				{#if getImageSrc()}
+					<div class="card-image">
+						<CustomImage 
+							src={getImageSrc()!} 
+							alt={getImageAlt()}
+							width={300}
+							height={200}
+							class="image"
+						/>
+					</div>
+				{/if}
+			{:else}
+				<!-- Reading/other layout: image on side, text on other side -->
+				{#if getImageSrc()}
+					<div class="card-image">
+						<CustomImage 
+							src={getImageSrc()!} 
+							alt={getImageAlt()}
+							width={120}
+							height={160}
+							class="image"
+						/>
+					</div>
+				{/if}
+				
+				<div class="card-text">
+					<div class="card-meta">
+						{getContentMeta()}
+					</div>
+					
+					<Heading size="lg" class="card-title">
+						{content.title}
+					</Heading>
+					
+					{#if getAdditionalInfo()}
+						<div class="card-additional">
+							{getAdditionalInfo()}
+						</div>
+					{/if}
+					
+					<Paragraph class="card-description">
+						{content.description}
+					</Paragraph>
+					
+					{#if content.tags && content.tags.length > 0}
+						<div class="card-tags">
+							{#each content.tags.slice(0, 4) as tag}
+								<Tag variant="outline" size="sm">{tag}</Tag>
+							{/each}
+						</div>
+					{/if}
 				</div>
 			{/if}
-			
-			<div class="card-text">
-				<div class="card-meta">
-					{getContentMeta()}
-				</div>
-				
-				<Heading size="lg" class="card-title">
-					{content.title}
-				</Heading>
-				
-				{#if getAdditionalInfo()}
-					<div class="card-additional">
-						{getAdditionalInfo()}
-					</div>
-				{/if}
-				
-				<Paragraph class="card-description">
-					{content.description}
-				</Paragraph>
-				
-				{#if content.tags && content.tags.length > 0}
-					<div class="card-tags">
-						{#each content.tags.slice(0, 4) as tag}
-							<Tag variant="outline" size="sm">{tag}</Tag>
-						{/each}
-					</div>
-				{/if}
-			</div>
 		</div>
 	</a>
 </article>
@@ -154,12 +206,24 @@
 		@apply flex gap-6;
 	}
 
+	.card-content.project-layout {
+		@apply flex-col;
+	}
+
 	.card-image {
 		@apply flex-shrink-0;
 	}
 
+	.card-content.project-layout .card-image {
+		@apply w-full;
+	}
+
 	.image {
 		@apply rounded-lg object-cover shadow-sm;
+	}
+
+	.card-content.project-layout .image {
+		@apply w-full h-auto;
 	}
 
 	.card-text {

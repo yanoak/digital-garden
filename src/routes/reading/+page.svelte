@@ -7,6 +7,7 @@
 		CollectionCardList 
 	} from '$lib/components';
 	import type { Reading, FilterGroup } from '$lib/types';
+	import { countDisplayedContent } from '$lib/utils';
 	import readingData from '$lib/data/reading.json';
 
 	// Load reading data from JSON file
@@ -93,7 +94,7 @@
 	/> -->
 
 	<!-- Content Meta -->
-	<CollectionMeta count={reading.length} type="items" />
+	<CollectionMeta count={countDisplayedContent(reading)} type="items" />
 	
 	<!-- Card List -->
 	<CollectionCardList content={reading} />

@@ -5,6 +5,7 @@ export interface BaseContent {
   description: string;
   tags: string[];
   slug: string;
+  display: boolean;
 }
 
 export interface Essay extends BaseContent {

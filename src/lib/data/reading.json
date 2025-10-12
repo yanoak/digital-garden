@@ -10,7 +10,8 @@
 		"published": "2012",
 		"rating": 4,
 		"status": "read",
-		"bookCover": "/images/book-covers/the_responsible_company.jpg"
+		"bookCover": "/images/book-covers/the_responsible_company.jpg",
+		"display": true
 	},
 	{
 		"title": "Down Girl: The Logic of Misogyny",
@@ -23,7 +24,8 @@
 		"published": "2017",
 		"rating": 5,
 		"status": "read",
-		"bookCover": "/images/book-covers/down_girl.jpg"
+		"bookCover": "/images/book-covers/down_girl.jpg",
+		"display": true
 	},
 	{
 		"title": "The Body Keeps the Score",
@@ -36,7 +38,8 @@
 		"published": "2014",
 		"rating": 5,
 		"status": "read",
-		"bookCover": "/images/book-covers/the_body_keeps_the_score.jpg"
+		"bookCover": "/images/book-covers/the_body_keeps_the_score.jpg",
+		"display": true
 	},
 	{
 		"title": "Tales from the Loop",
@@ -49,7 +52,8 @@
 		"published": "2014",
 		"rating": 4,
 		"status": "read",
-		"bookCover": "/images/book-covers/tales_from_the_loop.jpg"
+		"bookCover": "/images/book-covers/tales_from_the_loop.jpg",
+		"display": true
 	},
 	{
 		"title": "The Entrepreneur's Guide to Keeping Your Shit Together",
@@ -62,7 +66,8 @@
 		"published": "2019",
 		"rating": 5,
 		"status": "read",
-		"bookCover": "/images/book-covers/entrepreneurs_guide_to_keeping_your_shit_together.jpg"
+		"bookCover": "/images/book-covers/entrepreneurs_guide_to_keeping_your_shit_together.jpg",
+		"display": true
 	},
 	{
 		"title": "The Story of Silver: How the White Metal Shaped America and the Modern World",
@@ -75,7 +80,8 @@
 		"published": "2019",
 		"rating": 3,
 		"status": "read",
-		"bookCover": "/images/book-covers/the_story_of_silver.jpg"
+		"bookCover": "/images/book-covers/the_story_of_silver.jpg",
+		"display": true
 	},
 	{
 		"title": "Norse Mythology",
@@ -88,7 +94,8 @@
 		"published": "2017",
 		"rating": 4,
 		"status": "read",
-		"bookCover": "/images/book-covers/norse_mythology.jpg"
+		"bookCover": "/images/book-covers/norse_mythology.jpg",
+		"display": true
 	},
 	{
 		"title": "The Saga of the Volsungs: With the Saga of Ragnar Lothbrok",
@@ -101,7 +108,8 @@
 		"published": "2017",
 		"rating": 4,
 		"status": "read",
-		"bookCover": "/images/book-covers/saga_of_the_volsungs.jpg"
+		"bookCover": "/images/book-covers/saga_of_the_volsungs.jpg",
+		"display": true
 	},
 	{
 		"title": "Waiting to be Arrested at Night",
@@ -114,7 +122,8 @@
 		"published": "2023",
 		"rating": 5,
 		"status": "read",
-		"bookCover": "/images/book-covers/waiting_to_be_arrested_at_night.jpg"
+		"bookCover": "/images/book-covers/waiting_to_be_arrested_at_night.jpg",
+		"display": true
 	},
 	{
 		"title": "Slow Sad Suicide of Rohan Wijeratne",
@@ -127,6 +136,7 @@
 		"published": "2023",
 		"rating": 4,
 		"status": "read",
-		"bookCover": "/images/book-covers/slow_sad_suicide.jpg"
+		"bookCover": "/images/book-covers/slow_sad_suicide.jpg",
+		"display": true
 	}
 ]

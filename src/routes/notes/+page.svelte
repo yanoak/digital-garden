@@ -7,6 +7,7 @@
 		CollectionCardList 
 	} from '$lib/components';
 	import type { Note, FilterGroup } from '$lib/types';
+	import { countDisplayedContent } from '$lib/utils';
 	import notesData from '$lib/data/notes.json';
 
 	// Load notes data from JSON file
@@ -80,7 +81,7 @@
 	/> -->
 
 	<!-- Content Meta -->
-	<CollectionMeta count={notes.length} type="notes" />
+	<CollectionMeta count={countDisplayedContent(notes)} type="notes" />
 	
 	<!-- Card List -->
 	<CollectionCardList content={notes} />

@@ -6,7 +6,8 @@
 		"tags": ["learning", "public-sharing", "personal-growth", "knowledge-sharing"],
 		"slug": "sample-note",
 		"type": "note",
-		"category": "learning"
+		"category": "learning",
+		"display": false
 	},
 	{
 		"title": "The Art of Mindful Coding",
@@ -15,7 +16,8 @@
 		"tags": ["mindfulness", "programming", "productivity"],
 		"slug": "mindful-coding",
 		"type": "note",
-		"category": "programming"
+		"category": "programming",
+		"display": false
 	},
 	{
 		"title": "Building Sustainable Habits",
@@ -24,6 +26,7 @@
 		"tags": ["habits", "productivity", "self-improvement"],
 		"slug": "sustainable-habits",
 		"type": "note",
-		"category": "productivity"
+		"category": "productivity",
+		"display": false
 	}
 ]

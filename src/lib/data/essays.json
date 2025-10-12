@@ -7,7 +7,8 @@
 		"slug": "choosing-to-remember-choosing-to",
 		"type": "essay",
 		"featured": true,
-		"readingTime": 25
+		"readingTime": 25,
+		"display": true
 	},
 	{
 		"title": "We have always been Seapunks",
@@ -16,7 +17,8 @@
 		"tags": ["solarpunk", "myanmar", "worldbuilding", "cyberpunk", "substack", "essay", "tinkering", "seapunk", "technology", "global-south"],
 		"slug": "we-have-always-been-seapunks",
 		"type": "essay",
-		"readingTime": 21
+		"readingTime": 21,
+		"display": true
 	},
 	{
 		"title": "Tinkering, Worldbuilding, Resisting and Reconnecting",
@@ -25,6 +27,7 @@
 		"tags": ["myanmar", "worldbuilding", "substack", "essay", "tinkering", "technology", "resistance", "global-south"],
 		"slug": "tinkering-worldbuilding-resisting-reconnecting",
 		"type": "essay",
-		"readingTime": 8
+		"readingTime": 8,
+		"display": true
 	}
 ]

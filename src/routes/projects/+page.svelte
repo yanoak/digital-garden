@@ -7,6 +7,7 @@
 		CollectionCardList 
 	} from '$lib/components';
 	import type { Project, FilterGroup } from '$lib/types';
+	import { countDisplayedContent } from '$lib/utils';
 	import projectsData from '$lib/data/projects.json';
 
 	// Load projects data from JSON file
@@ -71,7 +72,7 @@
 <!-- Page Header -->
 <CollectionPageHeader 
 	title="Projects"
-	description="Write-ups about projects I've built and things I'm currently working on."
+	description="Write-ups about projects I've built and things I'm currently working on. For all these projects, I was responsible for the bulk of the interactive data visualisation developmemt."
 />
 
 <!-- Content Area -->
@@ -83,7 +84,7 @@
 	/> -->
 
 	<!-- Content Meta -->
-	<CollectionMeta count={projects.length} type="projects" />
+	<CollectionMeta count={countDisplayedContent(projects)} type="projects" />
 	
 	<!-- Card List -->
 	<CollectionCardList content={projects} />

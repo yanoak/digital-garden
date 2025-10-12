@@ -7,6 +7,7 @@
 		CollectionCardList 
 	} from '$lib/components';
 	import type { Essay, FilterGroup } from '$lib/types';
+	import { countDisplayedContent } from '$lib/utils';
 	import essaysData from '$lib/data/essays.json';
 
 	// Load essays data from JSON file
@@ -82,7 +83,7 @@
 	/> -->
 
 	<!-- Content Meta -->
-	<CollectionMeta count={essays.length} type="essays" />
+	<CollectionMeta count={countDisplayedContent(essays)} type="essays" />
 	
 	<!-- Card List -->
 	<CollectionCardList content={essays} />
