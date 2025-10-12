@@ -18,6 +18,16 @@
     { label: 'Notes', href: '/notes' },
     { label: 'Projects', href: '/projects' }
   ];
+
+  let isMobileMenuOpen = $state(false);
+
+  function toggleMobileMenu() {
+    isMobileMenuOpen = !isMobileMenuOpen;
+  }
+
+  function closeMobileMenu() {
+    isMobileMenuOpen = false;
+  }
 </script>
 
 <header class="bg-white border-b border-t-0 border-l-0 border-r-0 border-zen border-border py-4 {className}">
@@ -57,11 +67,33 @@
       <button 
         class="md:hidden p-2 text-accent hover:text-text-hover transition-colors duration-300"
         aria-label="Toggle mobile menu"
+        onclick={toggleMobileMenu}
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          {#if isMobileMenuOpen}
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          {:else}
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          {/if}
         </svg>
       </button>
     </nav>
+    
+    <!-- Mobile menu dropdown -->
+    {#if isMobileMenuOpen}
+      <div class="md:hidden bg-white border-t border-zen border-border">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          {#each navItems as item}
+            <a 
+              href={item.href} 
+              class="block px-3 py-2 text-base font-heading text-accent hover:text-text-hover hover:bg-secondary-100 rounded-md transition-colors duration-300"
+              onclick={closeMobileMenu}
+            >
+              {item.label}
+            </a>
+          {/each}
+        </div>
+      </div>
+    {/if}
   </Container>
 </header>
