@@ -142,8 +142,8 @@
 						<CustomImage 
 							src={getImageSrc()!} 
 							alt={getImageAlt()}
-							width={120}
-							height={160}
+							width={300}
+							height={400}
 							class="image"
 						/>
 					</div>
@@ -210,12 +210,30 @@
 		@apply flex-col;
 	}
 
+	/* Mobile responsive: stack image and text for non-project cards */
+	@media (max-width: 768px) {
+		.card-content:not(.project-layout) {
+			@apply flex-col;
+		}
+	}
+
 	.card-image {
 		@apply flex-shrink-0;
 	}
 
 	.card-content.project-layout .card-image {
 		@apply w-full;
+	}
+
+	/* Mobile responsive: make image full width for stacked layout */
+	@media (max-width: 768px) {
+		.card-content:not(.project-layout) .card-image {
+			@apply w-full;
+		}
+		
+		.card-content:not(.project-layout) .image {
+			@apply w-full h-auto;
+		}
 	}
 
 	.image {

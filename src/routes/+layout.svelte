@@ -8,7 +8,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Yan's Digital Garden</title>
+	<title>Yan's 	Digital Garden</title>
 </svelte:head>
 
 <div class="flex flex-col min-h-screen">
