@@ -11,11 +11,6 @@
 
 <style>
 	.collection-meta {
-		font-family: 'Archivo Narrow', sans-serif;
-		font-size: 14px;
-		font-weight: 400;
-		color: #586F7C;
-		letter-spacing: 1px;
-		margin-bottom: 40px;
+		@apply font-heading text-small text-accent tracking-wide mb-10;
 	}
 </style>

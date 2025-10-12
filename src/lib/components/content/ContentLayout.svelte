@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ContentHeader from './ContentHeader.svelte';
 	import ContentFooter from './ContentFooter.svelte';
+	import { Container, Section } from '$lib/components';
 	import type { ContentMetadata } from '$lib/types';
 
 	interface Props {
@@ -22,18 +23,21 @@
 		relatedContent, 
 		children 
 	}: Props = $props();
+
 </script>
 
-<div class="min-h-screen bg-background">
+<div class="content-layout">
 	<!-- Content Header -->
 	<ContentHeader {metadata} />
 
 	<!-- Article Content -->
-	<article class="bg-white max-w-content mx-auto px-2xl pt-20 pb-30">
-		<div class="prose prose-lg max-w-none">
-			{@render children?.()}
-		</div>
-	</article>
+	<Section class="content-article-section">
+		<Container maxWidth="content" class="content-article-container">
+			<article class="content-article">
+				{@render children?.()}
+			</article>
+		</Container>
+	</Section>
 
 	<!-- Content Footer -->
 	<ContentFooter 
@@ -42,3 +46,21 @@
 		{relatedContent}
 	/>
 </div>
+
+<style>
+	.content-layout {
+		@apply min-h-screen bg-background;
+	}
+
+	.content-article-section {
+		@apply bg-white;
+	}
+
+	.content-article-container {
+		@apply px-2xl py-20;
+	}
+
+	.content-article {
+		@apply max-w-none prose prose-lg;
+	}
+</style>

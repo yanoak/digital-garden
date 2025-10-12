@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Link } from '$lib/components';
+	import { Link, Container, Section, Heading, Paragraph } from '$lib/components';
 	import type { ContentMetadata } from '$lib/types';
 
 	interface Props {
@@ -20,15 +20,15 @@
 </script>
 
 <!-- Content Footer -->
-<footer class="bg-white border-t border-border py-15 px-2xl">
-	<div class="max-w-content mx-auto">
+<Section class="content-footer">
+	<Container maxWidth="content" class="content-footer-container">
 		<!-- Back Link -->
 		<Link 
 			href={backHref}
-			class="inline-flex items-center gap-2.5 text-accent hover:text-text-hover transition-colors duration-300 mb-10"
+			class="content-footer-back-link"
 		>
 			<svg 
-				class="w-4 h-4" 
+				class="content-footer-back-icon" 
 				fill="none" 
 				stroke="currentColor" 
 				viewBox="0 0 24 24"
@@ -45,29 +45,71 @@
 
 		<!-- Related Content -->
 		{#if relatedContent.length > 0}
-			<div class="mt-10">
-				<h3 class="text-content-related font-heading font-semibold tracking-wider uppercase text-text mb-6">
+			<div class="content-footer-related">
+				<Heading level={3} class="content-footer-related-title">
 					Related Content
-				</h3>
+				</Heading>
 				
-				<div class="space-y-5">
+				<div class="content-footer-related-list">
 					{#each relatedContent as item}
-						<div class="py-5 border-b border-background hover:pl-4 transition-all duration-300">
+						<div class="content-footer-related-item">
 							<Link 
 								href={item.href}
-								class="block text-content-related font-body font-medium text-text hover:text-text-hover transition-colors duration-300 mb-2"
+								class="content-footer-related-link"
 							>
 								{item.title}
 							</Link>
 							{#if item.meta}
-								<p class="text-content-related-meta font-heading text-accent">
+								<Paragraph class="content-footer-related-meta">
 									{item.meta}
-								</p>
+								</Paragraph>
 							{/if}
 						</div>
 					{/each}
 				</div>
 			</div>
 		{/if}
-	</div>
-</footer>
+	</Container>
+</Section>
+
+<style>
+	.content-footer {
+		@apply bg-white border-t border-border py-15 px-2xl;
+	}
+
+	.content-footer-container {
+		@apply mx-auto;
+	}
+
+	.content-footer-back-link {
+		@apply inline-flex items-center gap-2.5 text-accent hover:text-text-hover transition-colors duration-300 mb-10;
+	}
+
+	.content-footer-back-icon {
+		@apply w-4 h-4;
+	}
+
+	.content-footer-related {
+		@apply mt-10;
+	}
+
+	.content-footer-related-title {
+		@apply text-content-related font-heading font-semibold tracking-wider uppercase text-text mb-6;
+	}
+
+	.content-footer-related-list {
+		@apply space-y-5;
+	}
+
+	.content-footer-related-item {
+		@apply py-5 border-b border-background hover:pl-4 transition-all duration-300;
+	}
+
+	.content-footer-related-link {
+		@apply block text-content-related font-body font-medium text-text hover:text-text-hover transition-colors duration-300 mb-2;
+	}
+
+	.content-footer-related-meta {
+		@apply text-content-related-meta font-heading text-accent;
+	}
+</style>

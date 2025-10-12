@@ -5,23 +5,24 @@
 </script>
 
 <Section class="collection-content-area">
-	<Container maxWidth="container">
+	<Container maxWidth="container" class="collection-content-area-container">
 		{@render children?.()}
 	</Container>
 </Section>
 
 <style>
-	:global(.collection-content-area) {
-		background: #F4F4F9;
-		padding: 80px 50px;
-		max-width: 1400px;
-		margin: 0 auto;
+	.collection-content-area {
+		@apply bg-background py-20 px-2xl;
+	}
+
+	.collection-content-area-container {
+		@apply mx-auto;
 	}
 
 	/* Mobile responsive */
 	@media (max-width: 768px) {
-		:global(.collection-content-area) {
-			padding: 60px 30px;
+		.collection-content-area {
+			@apply py-15 px-8;
 		}
 	}
 </style>

@@ -8,7 +8,8 @@
 		"type": "project",
 		"status": "in-progress",
 		"technologies": ["SvelteKit", "TypeScript", "Tailwind CSS", "MDsvelte"],
-		"githubUrl": "https://github.com/yourusername/digital-garden"
+		"githubUrl": "https://github.com/yourusername/digital-garden",
+		"featuredImage": "/images/project-screenshots/digital-garden.png"
 	},
 	{
 		"title": "Task Management App",
@@ -20,7 +21,8 @@
 		"status": "completed",
 		"technologies": ["React", "Node.js", "PostgreSQL", "Socket.io"],
 		"githubUrl": "https://github.com/yourusername/task-app",
-		"liveUrl": "https://taskapp.example.com"
+		"liveUrl": "https://taskapp.example.com",
+		"featuredImage": "/images/project-screenshots/task-management-app.png"
 	},
 	{
 		"title": "AI Writing Assistant",
@@ -31,6 +33,7 @@
 		"type": "project",
 		"status": "planning",
 		"technologies": ["Python", "OpenAI API", "FastAPI", "React"],
-		"githubUrl": "https://github.com/yourusername/ai-writer"
+		"githubUrl": "https://github.com/yourusername/ai-writer",
+		"featuredImage": "/images/project-screenshots/ai-writing-assistant.png"
 	}
 ]
