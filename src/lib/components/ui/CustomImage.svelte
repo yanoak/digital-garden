@@ -26,7 +26,7 @@
   {alt}
   {width}
   {height}
-  class="max-w-full h-auto {className}"
+  class="h-auto {className}"
   loading={priority ? 'eager' : loading}
   fetchpriority={priority ? 'high' : 'auto'}
   srcset={generateSrcSet(src)}

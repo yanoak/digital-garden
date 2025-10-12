@@ -1,0 +1,33 @@
+[
+	{
+		"title": "Choosing to Remember, Choosing to Forget",
+		"date": "2025-03-24",
+		"description": "Notes on how we need to cherish the banality of courage",
+		"tags": ["myanmar", "seapunk", "essay", "substack"],
+		"slug": "choosing-to-remember-choosing-to",
+		"type": "essay",
+		"featured": true,
+		"readingTime": 25,
+		"display": true
+	},
+	{
+		"title": "We have always been Seapunks",
+		"date": "2024-12-26",
+		"description": "How I got enamoured with South East Asia's answer to Solarpunk",
+		"tags": ["solarpunk", "myanmar", "worldbuilding", "cyberpunk", "substack", "essay", "tinkering", "seapunk", "technology", "global-south"],
+		"slug": "we-have-always-been-seapunks",
+		"type": "essay",
+		"readingTime": 21,
+		"display": true
+	},
+	{
+		"title": "Tinkering, Worldbuilding, Resisting and Reconnecting",
+		"date": "2024-11-27",
+		"description": "Living with Shoggoths is a Global South perspective on creating space to live a meaningful life in a world facing massive technological changes, by tinkering, worldbuilding, resisting and reconnecting",
+		"tags": ["myanmar", "worldbuilding", "substack", "essay", "tinkering", "technology", "resistance", "global-south"],
+		"slug": "tinkering-worldbuilding-resisting-reconnecting",
+		"type": "essay",
+		"readingTime": 8,
+		"display": true
+	}
+]

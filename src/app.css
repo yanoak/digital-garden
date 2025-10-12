@@ -41,6 +41,66 @@
 }
 
 @layer components {
+  /* Content Page Layout */
+  .content-gradient {
+    background: linear-gradient(to bottom, #FFFFFF 0%, #F4F4F9 100%);
+  }
+
+  /* Content Page Typography */
+  .content-title {
+    @apply text-content-title font-heading font-semibold text-text leading-tight;
+  }
+
+  .content-subtitle {
+    @apply text-content-subtitle font-body text-accent leading-relaxed;
+  }
+
+  .content-body {
+    @apply text-content-body font-body text-text leading-loose;
+  }
+
+  .content-h2 {
+    @apply text-content-h2 font-heading font-semibold text-text leading-tight;
+  }
+
+  .content-h3 {
+    @apply text-content-h3 font-heading font-semibold text-text leading-snug;
+  }
+
+  .content-meta {
+    @apply text-content-meta font-heading text-accent uppercase tracking-wider;
+  }
+
+  .content-blockquote {
+    @apply text-content-blockquote font-body italic text-accent leading-relaxed;
+  }
+
+  .content-code {
+    @apply text-content-code font-mono text-primary bg-background px-1.5 py-0.5;
+  }
+
+  .content-code-block {
+    @apply text-content-code-block font-mono text-text bg-background p-6 border border-border overflow-x-auto;
+  }
+
+  .content-related {
+    @apply text-content-related font-body font-medium text-text;
+  }
+
+  .content-related-meta {
+    @apply text-content-related-meta font-heading text-accent;
+  }
+
+  /* Section Divider */
+  .section-divider {
+    @apply text-center text-2xl text-border tracking-widest;
+  }
+
+  .section-divider::before {
+    content: "• • •";
+    letter-spacing: 1.25rem;
+  }
+
   /* Zen Design System Components */
   .zen-gradient {
     background: linear-gradient(to bottom, white 0%, #F4F4F9 100%);

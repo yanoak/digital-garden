@@ -11,7 +11,7 @@
 	<title>Digital Garden</title>
 </svelte:head>
 
-<div class="min-h-screen flex flex-col bg-secondary-50">
+<div class="min-h-screen flex flex-col">
 	<Navigation />
 	
 	<main class="flex-1">

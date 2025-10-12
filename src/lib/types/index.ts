@@ -5,6 +5,7 @@ export interface BaseContent {
   description: string;
   tags: string[];
   slug: string;
+  display: boolean;
 }
 
 export interface Essay extends BaseContent {
@@ -37,6 +38,27 @@ export interface Project extends BaseContent {
 }
 
 export type Content = Essay | Reading | Note | Project;
+
+// Content Metadata for rendering
+export interface ContentMetadata {
+  title: string;
+  date?: string;
+  description?: string;
+  tags?: string[];
+  type?: string;
+  readingTime?: number;
+  featured?: boolean;
+  category?: string;
+  status?: string;
+  author?: string;
+  rating?: number;
+  technologies?: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  featuredImage?: string;
+  bookCover?: string;
+  relatedContent?: string[];
+}
 
 // Design System Types
 export type ZenColor = 'primary' | 'secondary' | 'accent' | 'text' | 'text-muted' | 'text-hover' | 'background' | 'white' | 'border' | 'border-hover';
@@ -143,6 +165,23 @@ export interface SidebarItemProps {
   href?: string;
   active?: boolean;
   onClick?: () => void;
+}
+
+export interface SidebarFilterProps {
+  title: string;
+  items: Array<{ label: string; value: string; count?: number; active?: boolean }>;
+  onItemClick: (value: string) => void;
+}
+
+export interface CollectionCardProps {
+  content: Content;
+  isLast?: boolean;
+}
+
+export interface FilterGroup {
+  key: string;
+  label: string;
+  options: Array<{ label: string; value: string; count?: number; active?: boolean }>;
 }
 
 // Legacy Component Props (for backward compatibility)

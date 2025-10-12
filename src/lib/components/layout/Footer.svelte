@@ -13,7 +13,7 @@
   <Container>
     <div class="py-8 text-center">
       <Paragraph class="text-secondary-500">
-        © 2024 Digital Garden. Built with SvelteKit and Tailwind CSS.
+        © 2025 Yan Naung Oak.
       </Paragraph>
     </div>
   </Container>

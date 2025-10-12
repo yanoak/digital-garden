@@ -1,0 +1,67 @@
+[
+	{
+		"title": "Carbon Capture Climate Analysis",
+		"date": "2024-11-19",
+		"description": "Interactive data visualization exploring carbon capture technologies and their potential to help Asia reach climate goals. Features comprehensive analysis of regional implementation challenges and opportunities.",
+		"tags": ["climate", "data-visualization", "carbon-capture", "asia", "sustainability"],
+		"slug": "carbon-capture-climate-analysis",
+		"type": "project",
+		"status": "completed",
+		"technologies": ["Data Visualization", "Climate Science", "Interactive Storytelling"],
+		"liveUrl": "https://dialogue.earth/en/climate/can-carbon-capture-help-asia-reach-its-climate-goals/",
+		"featuredImage": "/images/project-screenshots/carbon-capture-analysis.png",
+		"display": true
+	},
+	{
+		"title": "Myanmar Copy Songs",
+		"date": "2023-10-13",
+		"description": "Data-driven storytelling project exploring Myanmar's music industry through the lens of copy songs. Features interactive visualizations and cultural analysis of musical trends and copyright issues.",
+		"tags": ["music", "data-storytelling", "myanmar", "culture", "copyright"],
+		"slug": "myanmar-copy-songs",
+		"type": "project",
+		"status": "completed",
+		"technologies": ["Data Visualization", "Cultural Analysis", "Interactive Design"],
+		"liveUrl": "https://kontinentalist.com/stories/myanmar-copy-songs",
+		"featuredImage": "/images/project-screenshots/myanmar-copy-songs.png",
+		"display": true
+	},
+	{
+		"title": "EcoSolve Dashboard",
+		"date": "2025-05-23",
+		"description": "Environmental monitoring and sustainability tracking dashboard designed to help organizations visualize and manage their ecological impact through real-time data analytics.",
+		"tags": ["sustainability", "dashboard", "environmental-monitoring", "data-analytics"],
+		"slug": "ecosolve-dashboard",
+		"type": "project",
+		"status": "in-progress",
+		"technologies": ["React", "Data Visualization", "Environmental APIs", "Real-time Analytics"],
+		"liveUrl": "https://www.ecosolve.eco/dashboard",
+		"featuredImage": "/images/project-screenshots/ecosolve-dashboard.png",
+		"display": true
+	},
+	{
+		"title": "USAID Trump Southeast Asia Crisis Analysis",
+		"date": "2025-03-11",
+		"description": "Comprehensive data analysis examining the impact of Trump administration policies on USAID programs in Southeast Asia, featuring interactive visualizations of funding changes and regional effects.",
+		"tags": ["data-analysis", "usaid", "southeast-asia", "policy-analysis", "crisis"],
+		"slug": "usaid-trump-southeast-asia-crisis",
+		"type": "project",
+		"status": "completed",
+		"technologies": ["Data Analysis", "Policy Research", "Interactive Visualization"],
+		"liveUrl": "https://site.thibi.co/originals/usaid-trump-southeast-asia-crisis",
+		"featuredImage": "/images/project-screenshots/usaid-analysis.png",
+		"display": true
+	},
+	{
+		"title": "Community GIS Tool (CGIST)",
+		"date": "2022-12-01",
+		"description": "A collaborative GIS portal enabling local government officials to upload, clean, share, and analyze cross-departmental datasets. Features data editor and visualizer with permission settings and audit trails.",
+		"tags": ["gis", "government", "data-collaboration", "community-tools", "spatial-analysis"],
+		"slug": "community-gis-tool-tgist",
+		"type": "project",
+		"status": "completed",
+		"technologies": ["GIS", "Data Management", "Government Technology", "Spatial Analysis"],
+		"liveUrl": "https://movingrecords.report/conclusion.html",
+		"featuredImage": "/images/project-screenshots/community-gis-tool.jpg",
+		"display": true
+	}
+]

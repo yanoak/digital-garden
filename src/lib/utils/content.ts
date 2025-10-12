@@ -120,3 +120,12 @@ export function groupByYear(content: Content[]): Record<string, Content[]> {
     return groups;
   }, {} as Record<string, Content[]>);
 }
+
+/**
+ * Count content items that have display: true
+ * @param content - Array of content items
+ * @returns Number of items with display: true
+ */
+export function countDisplayedContent(content: Content[]): number {
+  return content.filter(item => item.display === true).length;
+}

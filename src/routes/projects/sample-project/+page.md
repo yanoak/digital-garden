@@ -13,17 +13,27 @@ githubUrl: "https://github.com/yourusername/digital-garden"
 
 ## Overview
 
-A personal digital garden built with SvelteKit, designed to share essays, book reviews, notes, and project write-ups in an interconnected, evolving format.
+A personal digital garden built with SvelteKit, designed to share essays, book reviews, notes, and project write-ups in an interconnected, evolving format. This project embodies the principles of learning in public and knowledge management.
+
+The digital garden serves as both a personal knowledge base and a public showcase of my learning journey, thoughts, and projects.
 
 ## Motivation
 
 I wanted a space to:
-- Share my learning journey
-- Document my thoughts and projects
-- Create a personal knowledge base
-- Build in public
+- **Share my learning journey**: Document the process, not just the results
+- **Document my thoughts and projects**: Create a living knowledge base
+- **Create a personal knowledge base**: Build an external brain
+- **Build in public**: Share the development process itself
 
-Traditional blogging felt too formal and rigid. A digital garden provides the freedom to publish imperfect, evolving content.
+Traditional blogging felt too formal and rigid. A digital garden provides the freedom to publish imperfect, evolving content that grows over time.
+
+### The Problem with Traditional Blogs
+
+Most blogs follow a reverse-chronological format that prioritizes recency over relevance. This makes it difficult to:
+- Find related content
+- Update and improve existing posts
+- Show the evolution of ideas
+- Create meaningful connections between concepts
 
 ## Technical Implementation
 
@@ -37,12 +47,13 @@ Traditional blogging felt too formal and rigid. A digital garden provides the fr
 
 ### Key Features
 
-1. **Markdown Support**: Write content in markdown files
+1. **Markdown Support**: Write content in markdown files with frontmatter
 2. **Section Organization**: Essays, reading, notes, and projects
 3. **Responsive Design**: Works on all screen sizes
 4. **Clean Navigation**: Easy to explore different content types
 5. **Component System**: Reusable components for consistent styling
 6. **Type Safety**: Full TypeScript support
+7. **Content Layout**: Optimized for reading with proper typography
 
 ### Project Structure
 
@@ -50,26 +61,63 @@ Traditional blogging felt too formal and rigid. A digital garden provides the fr
 src/
 ├── lib/
 │   ├── components/     # Reusable components
+│   │   ├── ui/        # Basic UI components
+│   │   ├── layout/    # Layout components
+│   │   ├── typography/ # Text components
+│   │   └── content/   # Content-specific components
 │   ├── types/         # TypeScript definitions
 │   └── utils/         # Utility functions
 ├── routes/
 │   ├── +page.svelte   # Home page
 │   ├── +layout.svelte # Shared layout
-│   ├── essays/
-│   ├── reading/
-│   ├── notes/
-│   └── projects/
+│   ├── essays/        # Essay content
+│   ├── reading/       # Book reviews
+│   ├── notes/         # Quick notes
+│   └── projects/      # Project documentation
 ```
+
+### Design System
+
+The project implements a comprehensive design system based on the "Classic Zen" aesthetic:
+
+- **Typography**: Archivo Narrow for headings, David Libre for body text
+- **Colors**: Muted palette with primary green accents
+- **Spacing**: Generous whitespace for readability
+- **Layout**: Single-column content optimized for reading
+
+## Development Process
+
+### Phase 1: Foundation
+- Set up SvelteKit project structure
+- Implement basic routing and layouts
+- Create initial component library
+
+### Phase 2: Content System
+- Integrate mdsvex for markdown processing
+- Build content management utilities
+- Implement frontmatter parsing
+
+### Phase 3: Design System
+- Develop comprehensive design tokens
+- Create reusable component library
+- Implement responsive layouts
+
+### Phase 4: Content Optimization
+- Optimize typography for readability
+- Implement content page layouts
+- Add navigation and metadata
 
 ## Future Enhancements
 
-- [ ] Search functionality
-- [ ] Tags and categorization
-- [ ] Backlinks between notes
-- [ ] RSS feed
-- [ ] Dark mode
-- [ ] Reading time estimates
-- [ ] Content filtering and sorting
+- [ ] **Search functionality**: Full-text search across all content
+- [ ] **Tags and categorization**: Better content organization
+- [ ] **Backlinks between notes**: Show connections between ideas
+- [ ] **RSS feed**: Syndicate content updates
+- [ ] **Dark mode**: Alternative color scheme
+- [ ] **Reading time estimates**: Automatic calculation
+- [ ] **Content filtering and sorting**: Advanced discovery
+- [ ] **Comment system**: Community engagement
+- [ ] **Analytics**: Track content performance
 
 ## Lessons Learned
 
@@ -78,12 +126,33 @@ src/
 - **Markdown is powerful**: mdsvex makes it easy to add interactive components
 - **Iteration is key**: A digital garden is never "done"
 - **Component reusability**: Pre-defined components save time and ensure consistency
+- **Typography matters**: Good typography significantly improves readability
+- **Design systems scale**: Investing in a design system pays off as the project grows
+
+## Technical Challenges
+
+### Content Management
+- Balancing flexibility with structure
+- Handling different content types consistently
+- Managing metadata and frontmatter
+
+### Performance
+- Optimizing markdown processing
+- Minimizing bundle size
+- Ensuring fast page loads
+
+### Maintainability
+- Keeping components DRY
+- Managing design tokens
+- Ensuring type safety
 
 ## Resources
 
 - [SvelteKit Documentation](https://kit.svelte.dev/)
 - [mdsvex](https://mdsvex.pngwn.io/)
 - [Digital Garden Philosophy](https://maggieappleton.com/garden-history)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ---
 

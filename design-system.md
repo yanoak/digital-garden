@@ -621,6 +621,522 @@ module.exports = {
 
 ---
 
+## Content Page Layout (Essays, Notes, Projects)
+
+### Page Structure
+Content pages (essays, notes, project documentation) use a focused, single-column layout optimized for reading.
+
+**Layout Pattern**:
+```
+Header (sticky)
+└─ Logo + Navigation
+
+Content Header (gradient)
+├─ Metadata
+├─ Title
+├─ Subtitle
+└─ Tags
+
+Article Content (white background)
+└─ Body text + Headings + Media
+
+Content Footer
+├─ Back link
+└─ Related content
+
+Site Footer
+```
+
+---
+
+### Content Header
+
+**Background**:
+```css
+background: linear-gradient(to bottom, #FFFFFF 0%, #F4F4F9 100%);
+```
+
+**Structure**:
+- Padding: 80px 50px 60px
+- Max Width: 700px (centered)
+- No border at bottom (seamless transition to content)
+
+**Metadata**:
+- Font: Archivo Narrow, 14px, weight 400
+- Color: `#586F7C`
+- Text Transform: Uppercase
+- Letter Spacing: 2px
+- Margin Bottom: 30px
+- Format: `Type · Date · Reading Time`
+
+**Title**:
+- Font: Archivo Narrow, 52px, weight 600
+- Line Height: 1.3
+- Color: `#0A0A0A`
+- Margin Bottom: 25px
+
+**Subtitle/Description**:
+- Font: David Libre, 20px, weight 400
+- Color: `#586F7C`
+- Line Height: 1.6
+- Margin Bottom: 30px
+- Max Width: 100% of container
+
+**Tags**:
+- Display: Flex, gap 10px
+- Individual tag: See Tag component spec
+
+---
+
+### Article Content
+
+**Container**:
+- Background: White (`#FFFFFF`)
+- Max Width: 700px (centered)
+- Padding: 80px 50px 120px
+- No borders or shadows
+
+**Body Text**:
+- Font: David Libre, 19px, weight 400
+- Line Height: 1.9 (optimal for extended reading)
+- Color: `#0A0A0A`
+- Paragraph spacing: 30px bottom margin
+
+**Reading-Optimized Spacing**:
+- Between paragraphs: 30px
+- Before H2: 60px
+- After H2: 25px
+- Before H3: 45px
+- After H3: 20px
+- Around blockquotes: 40px
+- Around code blocks: 35px
+- Around horizontal rules: 50px
+
+---
+
+### Content Typography
+
+**Heading 2 (Major Sections)**:
+- Font: Archivo Narrow, 32px, weight 600
+- Line Height: 1.3
+- Color: `#0A0A0A`
+- Margin: 60px top, 25px bottom
+
+**Heading 3 (Subsections)**:
+- Font: Archivo Narrow, 24px, weight 600
+- Line Height: 1.4
+- Color: `#0A0A0A`
+- Margin: 45px top, 20px bottom
+
+**Blockquote**:
+- Border Left: 3px solid `#04724D`
+- Padding Left: 30px
+- Font Style: Italic
+- Font Size: 20px
+- Color: `#586F7C`
+- Margin: 40px vertical
+
+**Lists (ul, ol)**:
+- Padding Left: 30px
+- Margin Bottom: 30px
+- List Item Spacing: 12px bottom margin
+
+**Links**:
+- Color: `#04724D`
+- Text Decoration: None
+- Border Bottom: 1px solid `#B8DBD9`
+- Transition: border-color 300ms ease
+- Hover: Border Bottom Color → `#04724D`
+
+**Inline Code**:
+- Font: Monospace (Courier New)
+- Background: `#F4F4F9`
+- Padding: 2px 6px
+- Font Size: 17px
+- Color: `#04724D`
+
+**Code Block (pre)**:
+- Background: `#F4F4F9`
+- Border: 1px solid `#B8DBD9`
+- Padding: 25px
+- Margin: 35px vertical
+- Font Size: 15px
+- Line Height: 1.6
+- Overflow: Auto (horizontal scroll)
+
+**Horizontal Rule**:
+- Border: None
+- Border Top: 1px solid `#B8DBD9`
+- Margin: 50px vertical
+
+**Section Divider** (optional ornamental):
+- Text: `• • •`
+- Text Align: Center
+- Color: `#B8DBD9`
+- Font Size: 24px
+- Letter Spacing: 20px
+- Margin: 60px vertical
+
+---
+
+### Content Footer
+
+**Structure**:
+- Background: White (`#FFFFFF`)
+- Border Top: 1px solid `#B8DBD9`
+- Padding: 60px 50px
+- Max Width: 700px (centered)
+
+**Back Link**:
+- Font: Archivo Narrow, 16px, weight 600
+- Color: `#586F7C`
+- Display: Inline-flex with arrow icon
+- Gap: 10px
+- Hover: Color → `#04724D`
+- Margin Bottom: 40px
+
+**Related Content Section**:
+- Margin Top: 40px
+
+**Related Title**:
+- Font: Archivo Narrow, 18px, weight 600
+- Letter Spacing: 2px
+- Text Transform: Uppercase
+- Color: `#0A0A0A`
+- Margin Bottom: 25px
+
+**Related Item**:
+- Padding: 20px vertical
+- Border Bottom: 1px solid `#F4F4F9`
+- Transition: padding-left 300ms ease
+- Hover: Padding Left → 15px
+
+**Related Item Link**:
+- Font: David Libre, 18px, weight 500
+- Color: `#0A0A0A`
+- Display: Block
+- Margin Bottom: 8px
+- Hover: Color → `#04724D`
+
+**Related Item Meta**:
+- Font: Archivo Narrow, 13px, weight 400
+- Color: `#586F7C`
+- Letter Spacing: 1px
+
+---
+
+## Layout Structure Clarifications
+
+### Section Landing Pages vs Individual Content Pages
+
+**Section Landing Pages** (`/essays`, `/notes`, `/reading`, `/projects`):
+- Use `Section`, `Container`, `Title`, and `ContentList` components
+- NO metadata header
+- Clean list-based layout for content discovery
+
+**Individual Content Pages** (`/essays/sample-essay`, `/notes/sample-note`, etc.):
+- Use `ContentLayout` component with `ContentHeader` and `ContentFooter`
+- Include metadata header with type, date, reading time
+- Full content layout optimized for reading
+
+---
+
+### Responsive Behavior (Content Pages)
+
+**Mobile (< 768px)**:
+- Header padding: 25px 30px
+- Content header padding: 60px 30px 40px
+- Title: 36px (down from 52px)
+- Subtitle: 18px (down from 20px)
+- Article padding: 60px 30px 80px
+- Body text: 18px (down from 19px)
+- H2: 28px (down from 32px)
+- H3: 22px (down from 24px)
+- Blockquote padding left: 20px, font size: 19px
+- Content footer padding: 50px 30px
+
+---
+
+### Maximum Readability Guidelines
+
+**Line Length**:
+- Optimal: 65-75 characters per line
+- Implementation: 700px max-width container
+- Never exceed 800px for body text
+
+**Line Height**:
+- Body text: 1.9 (generous for extended reading)
+- Headings: 1.3-1.4 (tighter for visual impact)
+
+**Contrast**:
+- Body text on white: `#0A0A0A` (21:1 ratio)
+- Avoid colored text for paragraphs
+
+**Distractions**:
+- No sidebars during reading
+- No floating elements
+- No pop-ups or interruptions
+- Minimal navigation (sticky header only)
+
+**Flow**:
+- Consistent vertical rhythm
+- Clear visual hierarchy
+- Generous whitespace
+- Smooth transitions between sections
+
+---
+
+## Collection Landing Pages (Essays, Notes, Reading, Projects)
+
+### Page Structure
+Collection landing pages display lists of content with filtering and sorting capabilities.
+
+**Layout Pattern**:
+```
+Header (sticky)
+└─ Logo + Navigation
+
+Page Header (gradient)
+├─ Collection Title
+└─ Collection Description
+
+Content Area (single-column)
+├─ Filter Bar (horizontal)
+└─ Content List (stacked cards)
+
+Site Footer
+```
+
+---
+
+### Page Header (Collection)
+
+**Background**:
+```css
+background: linear-gradient(to bottom, #FFFFFF 0%, #F4F4F9 100%);
+```
+
+**Structure**:
+- Padding: 80px 50px
+- Max Width: 1400px (centered)
+- No border at bottom
+
+**Collection Title**:
+- Font: Archivo Narrow, 56px, weight 400
+- Line Height: 1.3
+- Color: `#0A0A0A`
+- Margin Bottom: 20px
+
+**Collection Description**:
+- Font: David Libre, 20px, weight 400
+- Color: `#586F7C`
+- Line Height: 1.7
+- Max Width: 700px
+
+---
+
+### Single-Column Layout
+
+**Container**:
+- Max Width: 1400px (centered)
+- Padding: 80px 50px
+- Background: `#F4F4F9`
+
+---
+
+### Filter Bar (Horizontal)
+
+**Structure**:
+- Background: White (`#FFFFFF`)
+- Border: 1px solid `#B8DBD9`
+- Padding: 30px 40px
+- Margin Bottom: 40px
+- Display: Flex
+- Flex Wrap: Wrap
+- Gap: 30px
+- Align Items: Center
+
+**Filter Group**:
+- Display: Flex
+- Align Items: Center
+- Gap: 15px
+
+**Filter Label**:
+- Font: Archivo Narrow, 14px, weight 600
+- Letter Spacing: 2px
+- Text Transform: Uppercase
+- Color: `#0A0A0A`
+- White Space: Nowrap
+
+**Filter Options**:
+- Display: Flex
+- Gap: 10px
+- Flex Wrap: Wrap
+
+**Filter Button**:
+- Background: Transparent
+- Border: 1px solid `#B8DBD9`
+- Padding: 8px 16px
+- Font: David Libre, 14px, weight 400
+- Color: `#586F7C`
+- Cursor: Pointer
+- Transition: all 300ms ease
+- Border Radius: 0
+
+**Filter Button Hover**:
+- Border Color: `#04724D`
+- Color: `#04724D`
+
+**Filter Button Active**:
+- Background: `#04724D`
+- Color: `#FFFFFF`
+- Border: 1px solid `#04724D`
+
+**Filter Count** (optional):
+- Font: Archivo Narrow, 12px, weight 400
+- Color: `#B8DBD9`
+- Margin Left: 6px
+
+---
+
+### Content List
+
+**Content Meta** (e.g., "24 essays"):
+- Font: Archivo Narrow, 14px, weight 400
+- Color: `#586F7C`
+- Letter Spacing: 1px
+- Margin Bottom: 40px
+
+**Card List**:
+- Display: Flex
+- Flex Direction: Column
+- Gap: 0 (cards share borders)
+
+---
+
+### Content Card (List Item)
+
+**Structure**:
+- Background: White (`#FFFFFF`)
+- Border: 1px solid `#B8DBD9`
+- Border Bottom: None (except last card)
+- Padding: 40px
+- Cursor: Pointer
+- Transition: border-color 300ms ease
+
+**Border Behavior**:
+- First card: No special border-radius
+- Last card: Has bottom border (`1px solid #B8DBD9`)
+- All cards: Border-radius 0
+
+**Hover State**:
+- Border Color: `#04724D`
+- Z-Index: 1
+- Position: Relative (allows border to show on all sides)
+
+**Card Meta** (date, reading time):
+- Font: Archivo Narrow, 13px, weight 400
+- Color: `#586F7C`
+- Letter Spacing: 1px
+- Margin Bottom: 15px
+- Format: `Date · Reading Time`
+
+**Card Title**:
+- Font: Archivo Narrow, 26px, weight 600
+- Line Height: 1.3
+- Color: `#0A0A0A`
+- Margin Bottom: 15px
+- Transition: color 300ms ease
+- Hover: Color → `#04724D`
+
+**Card Description**:
+- Font: David Libre, 17px, weight 400
+- Line Height: 1.7
+- Color: `#586F7C`
+- Margin Bottom: 20px
+
+**Card Tags**:
+- Display: Flex
+- Gap: 10px
+- Flex Wrap: Wrap
+- Individual tag: See Tag component spec
+
+---
+
+### Empty State (No Results)
+
+**Container**:
+- Text Align: Center
+- Padding: 80px 40px
+- Color: `#586F7C`
+
+**Icon** (optional):
+- Font Size: 48px
+- Margin Bottom: 20px
+- Opacity: 0.5
+
+**Text**:
+- Font: David Libre, 18px, weight 400
+
+---
+
+### Collection-Specific Variations
+
+**Essays**:
+- Show: Date, reading time, tags
+- Filter by: Topics, tags
+- Sort by: Newest, oldest, alphabetical
+
+**Notes**:
+- Show: Date, type (seedling/evergreen)
+- Filter by: Topic, status (seedling/evergreen)
+- Sort by: Recently updated, newest, alphabetical
+
+**Reading**:
+- Show: Date, author, type (book/article)
+- Filter by: Status (reading/finished), type, year
+- Sort by: Recently added, date finished, author
+
+**Projects**:
+- Show: Date, status, tech stack
+- Filter by: Status (active/complete), technology
+- Sort by: Newest, alphabetical, status
+
+---
+
+### Responsive Behavior (Collection Pages)
+
+**Mobile (< 768px)**:
+- Filter bar padding: 20px 25px
+- Filter groups stack vertically
+- Filter gap: 20px
+- Page header padding: 60px 30px
+- Page title: 40px (down from 56px)
+- Content area padding: 60px 30px
+- Card padding: 30px
+- Card title: 22px (down from 26px)
+
+---
+
+### Interaction Patterns
+
+**Card Click**:
+- Entire card is clickable
+- Navigates to full content page
+- Use semantic `<article>` or `<a>` wrapper
+
+**Filter Selection**:
+- Updates URL parameters for shareable filtered views
+- Smooth content transition (no page reload)
+- Active filter clearly indicated
+
+**Sort Change**:
+- Reorders list with smooth animation
+- Maintains scroll position or scrolls to top
+- Active sort clearly indicated
+
+---
+
 ## Examples
 
 ### Hero Section Implementation
@@ -660,5 +1176,5 @@ module.exports = {
 
 ---
 
-*Last Updated: [Current Date]*
+*Last Updated: 6 Oct 2025*
 *Version: 1.0.0*

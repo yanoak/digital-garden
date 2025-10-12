@@ -27,9 +27,22 @@ export { default as Section } from './layout/Section.svelte';
 export { default as Grid } from './layout/Grid.svelte';
 export { default as Header } from './layout/Header.svelte';
 export { default as Sidebar } from './layout/Sidebar.svelte';
+export { default as SidebarFilter } from './layout/SidebarFilter.svelte';
+export { default as FilterBar } from './layout/FilterBar.svelte';
 export { default as Navigation } from './layout/Navigation.svelte';
 export { default as Footer } from './layout/Footer.svelte';
+export { default as EssayLayout } from './layout/EssayLayout.svelte';
+export { default as NoteLayout } from './layout/NoteLayout.svelte';
+export { default as ProjectLayout } from './layout/ProjectLayout.svelte';
+export { default as ReadingLayout } from './layout/ReadingLayout.svelte';
 
 // Content Components
 export { default as ContentCard } from './content/ContentCard.svelte';
-export { default as ContentList } from './content/ContentList.svelte';
+export { default as ContentHeader } from './content/ContentHeader.svelte';
+export { default as ContentFooter } from './content/ContentFooter.svelte';
+export { default as ContentLayout } from './content/ContentLayout.svelte';
+export { default as CollectionCard } from './content/CollectionCard.svelte';
+export { default as CollectionPageHeader } from './content/CollectionPageHeader.svelte';
+export { default as CollectionContentArea } from './content/CollectionContentArea.svelte';
+export { default as CollectionMeta } from './content/CollectionMeta.svelte';
+export { default as CollectionCardList } from './content/CollectionCardList.svelte';
