@@ -77,14 +77,14 @@
         <div class="relative w-12 h-12">
           <CustomImage 
             src={doorIcon} 
-            alt="Digital Garden" 
+            alt="Yan's Digital Garden" 
             width={24} 
             height={24}
             class="object-contain w-12 h-12 transition-opacity duration-300 group-hover:opacity-0"
           />
           <CustomImage 
             src={doorIconOpen} 
-            alt="Digital Garden" 
+            alt="Yan's Digital Garden" 
             width={24} 
             height={24}
             class="object-contain absolute top-0 left-0 w-12 h-12 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
